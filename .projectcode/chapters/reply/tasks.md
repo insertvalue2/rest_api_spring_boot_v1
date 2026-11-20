@@ -1,6 +1,6 @@
 # reply 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 글 상세에 댓글 함께 주기
   - 근거: S1, S2
   - 파일: server-spring/src/main/java/com/newtenco/blog/reply/Reply.java, server-spring/src/main/resources/db/data.sql, server-spring/src/main/java/com/newtenco/blog/board/Board.java, server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
