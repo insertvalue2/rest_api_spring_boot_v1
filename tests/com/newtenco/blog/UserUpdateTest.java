@@ -70,6 +70,14 @@ class UserUpdateTest {
         assertNull(JsonPath.read(response.body(), "$.body"));
     }
 
+    private String savedEmail() throws Exception {
+        try (Connection connection = dataSource.getConnection();
+             ResultSet rs = connection.createStatement().executeQuery("select email from user_tb where username = 'ssar'")) {
+            rs.next();
+            return rs.getString(1);
+        }
+    }
+
     private String savedPassword() throws Exception {
         try (Connection connection = dataSource.getConnection();
              ResultSet rs = connection.createStatement().executeQuery("select password from user_tb where username = 'ssar'")) {
@@ -86,6 +94,7 @@ class UserUpdateTest {
         assertEquals(1, (Integer) JsonPath.read(response.body(), "$.body.id"));
         assertEquals("ssar", JsonPath.read(response.body(), "$.body.username"));
         assertEquals("ssar@nate.com", JsonPath.read(response.body(), "$.body.email"));
+        assertEquals("ssar@nate.com", savedEmail());
     }
 
     @Test
