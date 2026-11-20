@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/api/admin/users/1",
+    "body": {
+      "roles": [
+        "USER",
+        "MANAGER"
+      ]
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA5MDMsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.qldTTo57xv1TWRVrbfxNHZsGpnz-xgU4iCM06XaHgKCb0nudGz-G9Ptr7o_mVlKvnOx_yABtK9kS_SNOUlQIqQ"
+    }
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "역할은 USER, ADMIN 만 사용할 수 있습니다",
+    "body": null
+  }
+}

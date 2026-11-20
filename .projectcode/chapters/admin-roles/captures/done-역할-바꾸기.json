@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/api/admin/users/1",
+    "body": {
+      "roles": [
+        "USER",
+        "ADMIN"
+      ]
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA5MjUsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.oMp4LYtAlch_sBdiOAiFxNPeSAaoxK6gISq-KU0_tzDvvXuRKJ92hjpgUm9dWhdOzaOF4pebnhBodU5Yx4Majg"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "username": "ssar",
+      "roles": [
+        "USER",
+        "ADMIN"
+      ]
+    }
+  }
+}
