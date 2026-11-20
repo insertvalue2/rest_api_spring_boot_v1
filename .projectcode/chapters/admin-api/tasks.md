@@ -18,6 +18,11 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
   - 실행하면: cos 토큰으로 DELETE /api/admin/boards/1(ssar의 글)이 200이다
   - Why: 관리자 주소는 이미 역할로 막혀 있으므로 서비스는 작성자를 확인하지 않는다
+- [x] 테스트 보강
+  - 근거: 빠짐. S4 테스트가 댓글이 함께 지워지는지 확인하지 않음
+  - 파일: tests/com/newtenco/blog/AdminApiTest.java
+  - 실행하면: 관리자가 지운 글의 댓글이 reply_tb에 남지 않는다
+  - Why: 테스트가 spec의 할 일을 모두 확인해야 장이 끝났다고 말할 수 있다
 - [ ] 수렴 점검
 - [ ] 캡처
 - [ ] 도식

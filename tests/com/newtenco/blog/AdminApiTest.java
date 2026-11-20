@@ -40,6 +40,14 @@ class AdminApiTest {
         }
     }
 
+    private int count(String sql) throws Exception {
+        try (Connection connection = dataSource.getConnection();
+             ResultSet rs = connection.createStatement().executeQuery(sql)) {
+            rs.next();
+            return rs.getInt(1);
+        }
+    }
+
     private List<String> roles(String username) throws Exception {
         List<String> roles = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
@@ -109,12 +117,14 @@ class AdminApiTest {
     void s4() throws Exception {
         String ssar = loginToken("ssar");
         Integer boardId = JsonPath.read(send("POST", "/api/boards", ssar, "{\"title\":\"지울 글\",\"content\":\"지울 내용\"}").body(), "$.body.id");
-        send("POST", "/api/replies", ssar, "{\"boardId\":" + boardId + ",\"comment\":\"함께 지울 댓글\"}");
+        assertEquals(200, send("POST", "/api/replies", ssar, "{\"boardId\":" + boardId + ",\"comment\":\"함께 지울 댓글\"}").statusCode());
+        assertEquals(1, count("select count(*) from reply_tb where board_id = " + boardId));
 
         String cos = loginToken("cos");
         HttpResponse<String> response = send("DELETE", "/api/admin/boards/" + boardId, cos, null);
         assertEquals(200, response.statusCode());
         assertFail(send("GET", "/api/boards/" + boardId, null, null), 404, "게시글을 찾을 수 없습니다");
+        assertEquals(0, count("select count(*) from reply_tb where board_id = " + boardId));
 
         assertFail(send("DELETE", "/api/admin/boards/99", cos, null), 404, "게시글을 찾을 수 없습니다");
     }
