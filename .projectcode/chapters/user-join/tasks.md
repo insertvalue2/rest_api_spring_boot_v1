@@ -13,7 +13,7 @@
   - 실행하면: POST /join이 id 3, love, 이메일을 주고, H2 콘솔의 password는 $2a$로 시작한다
   - Why: 비밀번호는 원문으로 저장하면 안 되므로 저장 전에 BCrypt로 바꾼다
   - 다른 장: board-list
-- [ ] T3 입력 검사하기
+- [x] T3 입력 검사하기
   - 근거: S4
   - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: 비밀번호 12로 가입하면 400 비밀번호는 4~20자여야 합니다

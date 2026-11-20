@@ -1,6 +1,7 @@
 package com.newtenco.blog.user;
 
 import com.newtenco.blog.core.util.Resp;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/join")
-    public ResponseEntity<?> join(@RequestBody UserRequest.JoinDTO reqDTO) {
+    public ResponseEntity<?> join(@Valid @RequestBody UserRequest.JoinDTO reqDTO) {
         return Resp.ok(userService.회원가입(reqDTO));
     }
 }
