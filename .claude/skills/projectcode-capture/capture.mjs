@@ -109,7 +109,14 @@ async function takeRequest(shot) {
     headers: { "Content-Type": "application/json" },
     body: body ? JSON.stringify(body) : undefined,
   })
-  const result = { request: shot.request, status: response.status, response: await response.json() }
+  const text = await response.text()
+  let parsed
+  try {
+    parsed = JSON.parse(text)
+  } catch {
+    parsed = text
+  }
+  const result = { request: shot.request, status: response.status, contentType: response.headers.get("content-type"), response: parsed }
   writeFileSync(join(outDir, shot.file), JSON.stringify(result, null, 2))
 }
 
