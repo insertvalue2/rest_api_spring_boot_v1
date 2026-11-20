@@ -31,8 +31,8 @@ public class BoardController {
     }
 
     @GetMapping("/api/boards/{id}/edit")
-    public ResponseEntity<?> updateInfo(@PathVariable("id") Integer id) {
-        return Resp.ok(boardService.글수정정보(id));
+    public ResponseEntity<?> updateInfo(@AuthenticationPrincipal User sessionUser, @PathVariable("id") Integer id) {
+        return Resp.ok(boardService.글수정정보(id, sessionUser.getId()));
     }
 
     @GetMapping("/api/boards/{id}")

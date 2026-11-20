@@ -7,9 +7,9 @@
   - 실행하면: ssar 토큰으로 GET /api/boards/1/edit가 제목1, 내용1을 주고, 토큰 없이는 401이다
   - Why: 수정 화면은 기존 내용을 채워 보여 줘야 하고, 로그인한 사람만 볼 수 있어야 한다
   - 다른 장: jwt-auth, board-list
-- [ ] T2 작성자만 수정 정보 보게 막기
+- [x] T2 작성자만 수정 정보 보게 막기
   - 근거: S4
-  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/ForbiddenException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/ForbiddenException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: ssar 토큰으로 GET /api/boards/4/edit가 403 게시글에 접근할 권한이 없습니다
   - Why: 로그인했다고 다 되는 것이 아니라 글의 주인인지 따로 확인해야 한다
   - 다른 장: board-detail, board-list

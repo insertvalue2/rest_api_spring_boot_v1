@@ -1,6 +1,7 @@
 package com.newtenco.blog.core.handler;
 
 import com.newtenco.blog.core.handler.errors.BadRequestException;
+import com.newtenco.blog.core.handler.errors.ForbiddenException;
 import com.newtenco.blog.core.handler.errors.NotFoundException;
 import com.newtenco.blog.core.handler.errors.UnauthorizedException;
 import com.newtenco.blog.core.util.Resp;
@@ -37,6 +38,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<?> ex401(UnauthorizedException e) {
         return Resp.fail(HttpStatus.UNAUTHORIZED, e.getMessage());
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<?> ex403(ForbiddenException e) {
+        return Resp.fail(HttpStatus.FORBIDDEN, e.getMessage());
     }
 
     @ExceptionHandler(NotFoundException.class)

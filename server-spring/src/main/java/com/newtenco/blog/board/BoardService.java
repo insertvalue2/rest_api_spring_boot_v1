@@ -1,5 +1,6 @@
 package com.newtenco.blog.board;
 
+import com.newtenco.blog.core.handler.errors.ForbiddenException;
 import com.newtenco.blog.core.handler.errors.NotFoundException;
 import com.newtenco.blog.user.User;
 import lombok.RequiredArgsConstructor;
@@ -27,9 +28,12 @@ public class BoardService {
         return new BoardResponse.ListDTO(savedBoard);
     }
 
-    public BoardResponse.ListDTO 글수정정보(Integer id) {
+    public BoardResponse.ListDTO 글수정정보(Integer id, Integer sessionUserId) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));
+        if (!board.getUser().getId().equals(sessionUserId)) {
+            throw new ForbiddenException("게시글에 접근할 권한이 없습니다");
+        }
         return new BoardResponse.ListDTO(board);
     }
 
