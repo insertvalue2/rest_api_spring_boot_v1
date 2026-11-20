@@ -1,0 +1,24 @@
+# refresh-token 작업
+
+- [ ] 테스트 작성
+- [ ] T1 로그인 때 리프레시 토큰 주기
+  - 근거: S1, S7
+  - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshToken.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenRepository.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+  - 실행하면: POST /login 응답 헤더에 Refresh-Token이 오고 H2 콘솔 refresh_token_tb에 같은 값이 있다
+  - Why: 액세스 토큰이 끝나도 다시 로그인하지 않게, 서버가 기억하는 긴 수명의 토큰을 따로 준다
+  - 다른 장: user-join, jwt-auth
+- [ ] T2 리프레시 토큰으로 재발급하기
+  - 근거: S2, S3, S4, S6, S7
+  - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/auth/AuthRequest.java, server-spring/src/main/java/com/newtenco/blog/auth/AuthResponse.java, server-spring/src/main/java/com/newtenco/blog/auth/AuthController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+  - 실행하면: POST /reissue가 새 Authorization과 Refresh-Token 헤더를 주고, 같은 값으로 다시 부르면 401이다
+  - Why: 쓴 리프레시 토큰을 바로 지우고 새것을 줘야 훔친 토큰을 두 번 쓸 수 없다
+  - 다른 장: jwt-auth
+- [ ] T3 로그아웃하기
+  - 근거: S5, S7
+  - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/auth/AuthController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+  - 실행하면: POST /logout 뒤 그 리프레시 토큰으로 재발급하면 401이다
+  - Why: 서버에 남은 리프레시 토큰을 지워야 로그아웃한 기기에서 다시 재발급할 수 없다
+  - 다른 장: jwt-auth
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
