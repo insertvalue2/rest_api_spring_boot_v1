@@ -1,5 +1,6 @@
 package com.newtenco.blog.board;
 
+import com.newtenco.blog.reply.Reply;
 import org.springframework.data.domain.Page;
 
 import java.sql.Timestamp;
@@ -25,10 +26,19 @@ public class BoardResponse {
         }
     }
 
-    public record DetailDTO(Integer id, String title, String content, Integer userId, String username) {
+    public record DetailDTO(Integer id, String title, String content, Integer userId, String username,
+                            List<ReplyDTO> replies) {
 
         public DetailDTO(Board board) {
-            this(board.getId(), board.getTitle(), board.getContent(), board.getUser().getId(), board.getUser().getUsername());
+            this(board.getId(), board.getTitle(), board.getContent(), board.getUser().getId(), board.getUser().getUsername(),
+                    board.getReplies().stream().map(ReplyDTO::new).toList());
+        }
+
+        public record ReplyDTO(Integer id, String comment, Integer userId, String username) {
+
+            public ReplyDTO(Reply reply) {
+                this(reply.getId(), reply.getComment(), reply.getUser().getId(), reply.getUser().getUsername());
+            }
         }
     }
 }

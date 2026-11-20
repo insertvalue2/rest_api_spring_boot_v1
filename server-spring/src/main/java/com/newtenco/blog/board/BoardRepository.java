@@ -14,6 +14,13 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
             countQuery = "select count(b) from Board b where b.title like concat('%', :keyword, '%')")
     Page<Board> findAllJoinUser(@Param("keyword") String keyword, Pageable pageable);
 
-    @Query("select b from Board b join fetch b.user where b.id = :id")
-    Optional<Board> findByIdJoinUser(@Param("id") Integer id);
+    @Query("""
+            select b from Board b
+            join fetch b.user
+            left join fetch b.replies r
+            left join fetch r.user
+            where b.id = :id
+            order by r.id
+            """)
+    Optional<Board> findByIdJoinUserAndReplies(@Param("id") Integer id);
 }

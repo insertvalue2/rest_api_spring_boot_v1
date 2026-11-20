@@ -1,7 +1,7 @@
 # reply 작업
 
 - [x] 테스트 작성
-- [ ] T1 글 상세에 댓글 함께 주기
+- [x] T1 글 상세에 댓글 함께 주기
   - 근거: S1, S2
   - 파일: server-spring/src/main/java/com/newtenco/blog/reply/Reply.java, server-spring/src/main/resources/db/data.sql, server-spring/src/main/java/com/newtenco/blog/board/Board.java, server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
   - 실행하면: GET /api/boards/4에 replies로 댓글1~3(cos)이 오고, 글 1은 빈 목록이다
