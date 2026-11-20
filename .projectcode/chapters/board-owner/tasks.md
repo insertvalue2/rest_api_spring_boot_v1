@@ -8,11 +8,16 @@
   - Why: 누구나 보는 주소라도 토큰이 있으면 누구인지 알아내 화면이 수정과 삭제 버튼을 보일지 정하게 한다
   - 다른 장: board-list
 - [x] T2 내 댓글 표시하기
-  - 근거: S3
+  - 근거: S1, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java
   - 실행하면: ssar 토큰으로 GET /api/boards/5가 글 owner false, 댓글4, 5 owner true
   - Why: 댓글마다 작성자가 다르므로 댓글 하나하나에 owner를 계산한다
   - 다른 장: board-list
+- [x] 테스트 보강
+  - 근거: 빠짐. S4 테스트가 댓글 owner를 확인하지 않음
+  - 파일: tests/com/newtenco/blog/BoardOwnerTest.java
+  - 실행하면: 틀린 토큰으로 글 5를 보면 댓글 owner가 모두 false다
+  - Why: 테스트가 spec의 할 일을 모두 확인해야 장이 끝났다고 말할 수 있다
 - [ ] 수렴 점검
 - [ ] 캡처
 - [ ] 도식

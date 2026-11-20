@@ -67,5 +67,9 @@ class BoardOwnerTest {
         HttpResponse<String> response = detail(1, "Bearer abc.def.ghi");
         assertEquals(200, response.statusCode());
         assertEquals(false, JsonPath.read(response.body(), "$.body.owner"));
+
+        HttpResponse<String> withReplies = detail(5, "Bearer abc.def.ghi");
+        assertEquals(200, withReplies.statusCode());
+        assertEquals(List.of(false, false), JsonPath.read(withReplies.body(), "$.body.replies[*].owner"));
     }
 }
