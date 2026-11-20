@@ -7,7 +7,7 @@
   - 실행하면: ssar/1234는 200과 회원 정보, 비밀번호 틀림은 401 유저네임 혹은 비밀번호가 일치하지 않습니다
   - Why: 토큰을 주기 전에 먼저 아이디와 암호화된 비밀번호로 회원을 확인해야 한다
   - 다른 장: user-join, board-detail
-- [ ] T2 JWT 만들어 헤더에 담기
+- [x] T2 JWT 만들어 헤더에 담기
   - 근거: S2, S3
   - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: 응답 헤더 Authorization에 Bearer eyJ...가 오고, jwt.io에 넣으면 id 1, username ssar, exp가 보인다

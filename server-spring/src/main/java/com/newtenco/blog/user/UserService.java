@@ -2,6 +2,7 @@ package com.newtenco.blog.user;
 
 import com.newtenco.blog.core.handler.errors.BadRequestException;
 import com.newtenco.blog.core.handler.errors.UnauthorizedException;
+import com.newtenco.blog.core.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,14 +26,14 @@ public class UserService {
         return new UserResponse.DTO(savedUser);
     }
 
-    public UserResponse.DTO 로그인(UserRequest.LoginDTO reqDTO) {
+    public UserResponse.LoginDTO 로그인(UserRequest.LoginDTO reqDTO) {
         User user = userRepository.findByUsername(reqDTO.username())
                 .orElseThrow(() -> new UnauthorizedException("유저네임 혹은 비밀번호가 일치하지 않습니다"));
 
         if (!passwordEncoder.matches(reqDTO.password(), user.getPassword())) {
             throw new UnauthorizedException("유저네임 혹은 비밀번호가 일치하지 않습니다");
         }
-        return new UserResponse.DTO(user);
+        return new UserResponse.LoginDTO(JwtUtil.create(user), new UserResponse.DTO(user));
     }
 
     public UserResponse.AvailableDTO 유저네임중복체크(String username) {

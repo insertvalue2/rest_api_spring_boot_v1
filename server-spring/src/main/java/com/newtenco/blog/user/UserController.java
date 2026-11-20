@@ -1,5 +1,6 @@
 package com.newtenco.blog.user;
 
+import com.newtenco.blog.core.util.JwtUtil;
 import com.newtenco.blog.core.util.Resp;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,10 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserRequest.LoginDTO reqDTO) {
-        return Resp.ok(userService.로그인(reqDTO));
+        UserResponse.LoginDTO loginDTO = userService.로그인(reqDTO);
+        return ResponseEntity.ok()
+                .header(JwtUtil.HEADER, loginDTO.accessToken())
+                .body(new Resp<>(200, "성공", loginDTO.user()));
     }
 
     @GetMapping("/check-username")

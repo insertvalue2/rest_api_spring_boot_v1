@@ -9,6 +9,9 @@ public class UserResponse {
         }
     }
 
+    public record LoginDTO(String accessToken, DTO user) {
+    }
+
     public record AvailableDTO(boolean available) {
     }
 }
