@@ -7,7 +7,7 @@
   - 실행하면: GET /api/boards/4에 replies로 댓글1~3(cos)이 오고, 글 1은 빈 목록이다
   - Why: 글 하나를 볼 때 그 글의 댓글과 작성자까지 쿼리 한 번으로 가져와야 한다
   - 다른 장: board-list
-- [ ] T2 댓글 쓰기
+- [x] T2 댓글 쓰기
   - 근거: S3, S4, S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/reply/ReplyRepository.java, server-spring/src/main/java/com/newtenco/blog/reply/ReplyRequest.java, server-spring/src/main/java/com/newtenco/blog/reply/ReplyResponse.java, server-spring/src/main/java/com/newtenco/blog/reply/ReplyService.java, server-spring/src/main/java/com/newtenco/blog/reply/ReplyController.java
   - 실행하면: ssar 토큰으로 POST /api/replies {boardId 4, 댓글6}이 id 6을 주고, 글 4 상세에 댓글6이 보인다
