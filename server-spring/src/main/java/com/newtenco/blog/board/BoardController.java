@@ -9,6 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,12 @@ public class BoardController {
     @GetMapping("/api/boards/{id}/edit")
     public ResponseEntity<?> updateInfo(@AuthenticationPrincipal User sessionUser, @PathVariable("id") Integer id) {
         return Resp.ok(boardService.글수정정보(id, sessionUser.getId()));
+    }
+
+    @PutMapping("/api/boards/{id}")
+    public ResponseEntity<?> update(@AuthenticationPrincipal User sessionUser, @PathVariable("id") Integer id,
+                                    @Valid @RequestBody BoardRequest.UpdateDTO reqDTO) {
+        return Resp.ok(boardService.글수정(id, reqDTO, sessionUser.getId()));
     }
 
     @GetMapping("/api/boards/{id}")

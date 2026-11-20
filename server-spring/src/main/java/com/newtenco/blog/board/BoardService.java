@@ -37,6 +37,17 @@ public class BoardService {
         return new BoardResponse.ListDTO(board);
     }
 
+    @Transactional
+    public BoardResponse.ListDTO 글수정(Integer id, BoardRequest.UpdateDTO reqDTO, Integer sessionUserId) {
+        Board board = boardRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));
+        if (!board.getUser().getId().equals(sessionUserId)) {
+            throw new ForbiddenException("게시글을 수정할 권한이 없습니다");
+        }
+        board.update(reqDTO.title(), reqDTO.content());
+        return new BoardResponse.ListDTO(board);
+    }
+
     public BoardResponse.DetailDTO 글상세(Integer id) {
         Board board = boardRepository.findByIdJoinUser(id)
                 .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));

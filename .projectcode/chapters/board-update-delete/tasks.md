@@ -13,7 +13,7 @@
   - 실행하면: ssar 토큰으로 GET /api/boards/4/edit가 403 게시글에 접근할 권한이 없습니다
   - Why: 로그인했다고 다 되는 것이 아니라 글의 주인인지 따로 확인해야 한다
   - 다른 장: board-detail, board-list
-- [ ] T3 글 수정하기
+- [x] T3 글 수정하기
   - 근거: S2, S4, S5, S6
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/Board.java, server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: PUT /api/boards/1이 제목1 수정을 돌려주고, 상세도 바뀌어 있다
