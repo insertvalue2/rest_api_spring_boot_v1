@@ -1,7 +1,7 @@
 # board-list 작업
 
 - [x] 테스트 작성
-- [ ] T1 회원과 글 엔티티 만들기
+- [x] T1 회원과 글 엔티티 만들기
   - 근거: S1
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/board/Board.java
   - 실행하면: 로그에 create table user_tb, board_tb와 user_id 외래키가 찍히고, H2 콘솔에 두 테이블이 보인다
