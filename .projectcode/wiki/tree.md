@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: board-list 장 끝
+기준: board-detail 장 끝
 
 ```
 gradle/
@@ -19,21 +19,25 @@ server-spring/
           newtenco/
             blog/
               board/
-                Board.java   새로
-                BoardController.java   새로
-                BoardRepository.java   새로
-                BoardResponse.java   새로
-                BoardService.java   새로
+                Board.java
+                BoardController.java   고침
+                BoardRepository.java   고침
+                BoardResponse.java   고침
+                BoardService.java   고침
               core/
+                handler/
+                  errors/
+                    NotFoundException.java   새로
+                  GlobalExceptionHandler.java   새로
                 util/
-                  Resp.java   새로
+                  Resp.java   고침
               user/
-                User.java   새로
+                User.java
               BlogApplication.java
       resources/
         db/
-          data.sql   새로
-        application.properties   고침
+          data.sql
+        application.properties
   .gitignore
   build.gradle
   gradlew

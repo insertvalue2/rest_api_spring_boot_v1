@@ -7,8 +7,8 @@
 |---|---|---|---|---|---|---|
 | 1 | project-setup 프로젝트 뼈대 | 기능 | Gradle 구조, Spring Boot 실행, H2 설정, 테스트 실행 | 완료 | 3 | 4 |
 | 2 | board-list 글 목록 | 기능 | JPA 엔티티, ManyToOne, Repository, data.sql, 공통 응답 Resp, 응답 DTO | 완료 | 4 | 5 |
-| 3 | board-detail 글 상세 | 기능 | 사용자 예외, 전역 예외 처리 404 | 진행 중 | 0 | 0 |
-| 4 | board-paging 목록 쪽 나누기와 검색 | 기능 | Pageable, Page, 제목 검색 쿼리 | 대기 | 0 | 0 |
+| 3 | board-detail 글 상세 | 기능 | 사용자 예외, 전역 예외 처리 404 | 완료 | 4 | 5 |
+| 4 | board-paging 목록 쪽 나누기와 검색 | 기능 | Pageable, Page, 제목 검색 쿼리 | 진행 중 | 3 | 0 |
 | 5 | user-join 회원가입 | 기능 | Bean Validation, Security 기본 설정, BCrypt, 아이디 중복 확인 | 대기 | 0 | 0 |
 | 6 | user-login 로그인과 JWT 발급 | 기능 | JWT 만들기, 응답 헤더 Authorization, CORS 노출 헤더 | 대기 | 0 | 0 |
 | 7 | jwt-auth JWT 인증 필터 | 기능 | 인증 필터, Stateless, URL 접근 규칙, 401 JSON, 내 정보 조회 | 대기 | 0 | 0 |
@@ -28,3 +28,5 @@
 - 운영 DB (MySQL 등)
 - 리액트 화면
 - 서버 확인용 주소
+- 한 쪽 글 수 바꾸기(size)
+- 내용이나 작성자로 검색

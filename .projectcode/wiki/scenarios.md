@@ -39,3 +39,29 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/user/User.java
 - server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java
 - server-spring/src/main/resources/db/data.sql
+
+## 글 상세 보기
+
+```mermaid
+flowchart LR
+  A[GET /api/boards/id] --> B[BoardController]
+  B --> C[BoardService]
+  C --> D[BoardRepository]
+  D --> E[(board_tb)]
+  D --> F[(user_tb)]
+  C --> G[BoardResponse.DetailDTO]
+  C --> H[NotFoundException]
+  H --> I[GlobalExceptionHandler]
+  B --> J[Resp]
+  I --> J
+```
+
+만든 장: board-detail
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/errors/NotFoundException.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+- server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java

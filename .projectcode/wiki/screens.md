@@ -11,3 +11,8 @@
 처음 나온 장: board-list
 장 끝 사진: chapters/board-list/captures/done-글-목록.json
 보이는 것: status 200, msg 성공, body에 글 5개가 id 5부터 작성자 아이디와 함께 온다
+
+## GET /api/boards/{id}
+처음 나온 장: board-detail
+장 끝 사진: chapters/board-detail/captures/done-없는-글-404.json
+보이는 것: 없는 글 99를 요청하면 status 404, msg 게시글을 찾을 수 없습니다, body null이 온다
