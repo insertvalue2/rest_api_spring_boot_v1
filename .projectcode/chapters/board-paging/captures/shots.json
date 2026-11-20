@@ -1,0 +1,18 @@
+{
+  "chapter": "board-paging",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-3개씩-나누기.json", "task": "T1", "commit": "5817c74", "screen": "GET /api/boards?page=1",
+      "see": "?page=1이 글 2, 1을 준다. body는 아직 배열이다",
+      "request": { "method": "GET", "path": "/api/boards?page=1" } },
+    { "file": "T2-쪽-정보.json", "task": "T2", "commit": "76404c9", "screen": "GET /api/boards?page=0",
+      "see": "body가 boards와 number 0, totalPage 2, isFirst true, isLast false로 온다",
+      "request": { "method": "GET", "path": "/api/boards?page=0" } },
+    { "file": "T3-제목-검색.json", "task": "T3", "commit": "518355d", "screen": "GET /api/boards?page=0&keyword=제목1",
+      "see": "keyword 제목1이 글 하나만 주고 totalPage는 1이다",
+      "request": { "method": "GET", "path": "/api/boards?page=0&keyword=%EC%A0%9C%EB%AA%A91" } },
+    { "file": "done-쪽-나눈-목록.json", "task": "done", "commit": "518355d", "screen": "GET /api/boards?page=0",
+      "see": "첫 쪽 글 5, 4, 3이 number 0, totalPage 2, isFirst true, isLast false와 함께 온다",
+      "request": { "method": "GET", "path": "/api/boards?page=0" } }
+  ]
+}

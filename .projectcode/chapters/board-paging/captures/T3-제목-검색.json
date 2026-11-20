@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards?page=0&keyword=%EC%A0%9C%EB%AA%A91"
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "boards": [
+        {
+          "id": 1,
+          "title": "제목1",
+          "content": "내용1",
+          "username": "ssar",
+          "createdAt": "2026-11-20T10:04:29.140Z"
+        }
+      ],
+      "number": 0,
+      "totalPage": 1,
+      "isFirst": true,
+      "isLast": true
+    }
+  }
+}

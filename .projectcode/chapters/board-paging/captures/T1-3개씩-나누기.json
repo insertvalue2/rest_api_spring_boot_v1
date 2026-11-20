@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards?page=1"
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": [
+      {
+        "id": 2,
+        "title": "제목2",
+        "content": "내용2",
+        "username": "ssar",
+        "createdAt": "2026-11-20T10:03:51.662Z"
+      },
+      {
+        "id": 1,
+        "title": "제목1",
+        "content": "내용1",
+        "username": "ssar",
+        "createdAt": "2026-11-20T10:03:51.662Z"
+      }
+    ]
+  }
+}
