@@ -6,6 +6,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.newtenco.blog.user.User;
 
 import java.util.Date;
+import java.util.List;
 
 public class JwtUtil {
 
@@ -22,6 +23,7 @@ public class JwtUtil {
                 .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .withClaim("id", user.getId())
                 .withClaim("username", user.getUsername())
+                .withClaim("roles", user.getRoles())
                 .sign(ALGORITHM);
         return TOKEN_PREFIX + jwt;
     }
@@ -30,6 +32,7 @@ public class JwtUtil {
         DecodedJWT decoded = JWT.require(ALGORITHM).build().verify(jwt);
         Integer id = decoded.getClaim("id").asInt();
         String username = decoded.getSubject();
-        return User.builder().id(id).username(username).build();
+        List<String> roles = decoded.getClaim("roles").asList(String.class);
+        return User.builder().id(id).username(username).roles(roles).build();
     }
 }
