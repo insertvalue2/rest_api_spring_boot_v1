@@ -15,9 +15,9 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public BoardResponse.PageDTO 글목록(Integer page) {
+    public BoardResponse.PageDTO 글목록(Integer page, String keyword) {
         Pageable pageable = PageRequest.of(page, 3, Sort.by(Sort.Direction.DESC, "id"));
-        return new BoardResponse.PageDTO(boardRepository.findAllJoinUser(pageable));
+        return new BoardResponse.PageDTO(boardRepository.findAllJoinUser(keyword, pageable));
     }
 
     public BoardResponse.DetailDTO 글상세(Integer id) {

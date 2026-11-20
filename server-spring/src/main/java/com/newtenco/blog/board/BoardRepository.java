@@ -10,9 +10,9 @@ import java.util.Optional;
 
 public interface BoardRepository extends JpaRepository<Board, Integer> {
 
-    @Query(value = "select b from Board b join fetch b.user",
-            countQuery = "select count(b) from Board b")
-    Page<Board> findAllJoinUser(Pageable pageable);
+    @Query(value = "select b from Board b join fetch b.user where b.title like concat('%', :keyword, '%')",
+            countQuery = "select count(b) from Board b where b.title like concat('%', :keyword, '%')")
+    Page<Board> findAllJoinUser(@Param("keyword") String keyword, Pageable pageable);
 
     @Query("select b from Board b join fetch b.user where b.id = :id")
     Optional<Board> findByIdJoinUser(@Param("id") Integer id);

@@ -15,8 +15,9 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping("/api/boards")
-    public ResponseEntity<?> list(@RequestParam(value = "page", defaultValue = "0") Integer page) {
-        return Resp.ok(boardService.글목록(page));
+    public ResponseEntity<?> list(@RequestParam(value = "page", defaultValue = "0") Integer page,
+                                  @RequestParam(value = "keyword", defaultValue = "") String keyword) {
+        return Resp.ok(boardService.글목록(page, keyword));
     }
 
     @GetMapping("/api/boards/{id}")

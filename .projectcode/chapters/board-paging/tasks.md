@@ -13,7 +13,7 @@
   - 실행하면: body가 boards와 number 0, totalPage 2, isFirst true, isLast false로 온다
   - Why: 받는 쪽이 다음 쪽 버튼을 그리려면 지금 쪽과 전체 쪽 수를 알아야 한다
   - 다른 장: board-list
-- [ ] T3 제목으로 검색하기
+- [x] T3 제목으로 검색하기
   - 근거: S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: ?keyword=제목1이 글 하나만 주고 totalPage는 1이다
