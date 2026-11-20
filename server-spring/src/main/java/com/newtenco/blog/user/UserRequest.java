@@ -35,4 +35,7 @@ public class UserRequest {
             @NotBlank(message = "비밀번호를 입력해주세요")
             String password) {
     }
+
+    public record UpdateDTO(String email, String password) {
+    }
 }

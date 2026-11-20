@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,11 @@ public class UserController {
     @GetMapping("/api/users/me")
     public ResponseEntity<?> me(@AuthenticationPrincipal User sessionUser) {
         return Resp.ok(userService.내정보(sessionUser.getId()));
+    }
+
+    @PutMapping("/api/users/me")
+    public ResponseEntity<?> update(@AuthenticationPrincipal User sessionUser, @RequestBody UserRequest.UpdateDTO reqDTO) {
+        return Resp.ok(userService.회원수정(reqDTO, sessionUser.getId()));
     }
 
     @GetMapping("/check-username")

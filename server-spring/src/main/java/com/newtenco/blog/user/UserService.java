@@ -43,6 +43,14 @@ public class UserService {
         return new UserResponse.DTO(user);
     }
 
+    @Transactional
+    public UserResponse.DTO 회원수정(UserRequest.UpdateDTO reqDTO, Integer sessionUserId) {
+        User user = userRepository.findById(sessionUserId)
+                .orElseThrow(() -> new NotFoundException("회원을 찾을 수 없습니다"));
+        user.update(reqDTO.email(), user.getPassword());
+        return new UserResponse.DTO(user);
+    }
+
     public UserResponse.AvailableDTO 유저네임중복체크(String username) {
         boolean available = !userRepository.existsByUsername(username);
         return new UserResponse.AvailableDTO(available);

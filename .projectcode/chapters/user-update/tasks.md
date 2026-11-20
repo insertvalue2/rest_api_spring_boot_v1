@@ -1,7 +1,7 @@
 # user-update 작업
 
 - [x] 테스트 작성
-- [ ] T1 이메일 수정하기
+- [x] T1 이메일 수정하기
   - 근거: S1, S2, S6
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: ssar 토큰으로 PUT /api/users/me {ssar@nate.com, 빈 비밀번호}가 새 이메일을 주고, 1234로 계속 로그인된다
