@@ -2,6 +2,7 @@ package com.newtenco.blog.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
@@ -52,6 +53,8 @@ public class UserRequest {
         }
     }
 
-    public record RolesDTO(List<String> roles) {
+    public record RolesDTO(
+            @NotEmpty(message = "역할을 설정해주세요")
+            List<String> roles) {
     }
 }

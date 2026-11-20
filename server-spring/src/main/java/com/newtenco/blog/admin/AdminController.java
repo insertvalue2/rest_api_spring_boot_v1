@@ -3,6 +3,7 @@ package com.newtenco.blog.admin;
 import com.newtenco.blog.core.util.Resp;
 import com.newtenco.blog.user.User;
 import com.newtenco.blog.user.UserRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -31,7 +32,7 @@ public class AdminController {
     }
 
     @PutMapping("/api/admin/users/{id}")
-    public ResponseEntity<?> updateRoles(@PathVariable("id") Integer id, @RequestBody UserRequest.RolesDTO reqDTO) {
+    public ResponseEntity<?> updateRoles(@PathVariable("id") Integer id, @Valid @RequestBody UserRequest.RolesDTO reqDTO) {
         return Resp.ok(adminService.관리자_역할수정(id, reqDTO));
     }
 }
