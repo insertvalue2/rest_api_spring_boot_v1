@@ -102,6 +102,11 @@ class UserJoinTest {
         assertFail(join("love", "12", "love@nate.com"), 400, "비밀번호는 4~20자여야 합니다");
         assertFail(join("abc", "1234", "love@nate.com"), 400, "유저네임은 4~20자여야 합니다");
         assertFail(join("love", "1234", "love-nate.com"), 400, "이메일 형식이 올바르지 않습니다");
+
+        HttpResponse<String> blank = join("love", "", "love@nate.com");
+        assertEquals(400, blank.statusCode());
+        String msg = JsonPath.read(blank.body(), "$.msg");
+        assertTrue(msg.equals("비밀번호를 입력해주세요") || msg.equals("비밀번호는 4~20자여야 합니다"));
     }
 
     @Test
@@ -117,6 +122,7 @@ class UserJoinTest {
         assertEquals(200, taken.statusCode());
         assertEquals(false, JsonPath.read(taken.body(), "$.body.available"));
         HttpResponse<String> free = get("/check-username?username=nobody");
+        assertEquals(200, free.statusCode());
         assertEquals(true, JsonPath.read(free.body(), "$.body.available"));
     }
 
