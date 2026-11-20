@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/api/users/me",
+    "body": {
+      "email": "ssar@nate.com",
+      "password": "12"
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5OTMxLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.IOyjTCyAV04yYE3RpmPCj7CvC_dZDJSRDHBGZhDwAADWUZgcXFeBCgrav0GgCr5XSyM1VXHMELIAudeX5QV0HQ"
+    }
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "비밀번호는 4~20자여야 합니다",
+    "body": null
+  }
+}

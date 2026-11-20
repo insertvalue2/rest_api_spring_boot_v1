@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/api/users/me",
+    "body": {
+      "email": "ssar@nate.com",
+      "password": ""
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5ODg1LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.4GUtX_vSuNXcnyeBt7ydiT-pHcNDUUi5YVDn1Vpy2sFIT_tH03_BgEYp7Hsh6JXzwRsUWO5BNVc0qhaTJGaCEQ"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "username": "ssar",
+      "email": "ssar@nate.com"
+    }
+  }
+}

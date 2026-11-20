@@ -24,6 +24,6 @@
   - 파일: tests/com/newtenco/blog/UserUpdateTest.java
   - 실행하면: 수정 뒤 user_tb의 ssar 이메일이 새 이메일이다
   - Why: 변경 감지가 실제로 UPDATE를 보냈는지 확인해야 한다
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식

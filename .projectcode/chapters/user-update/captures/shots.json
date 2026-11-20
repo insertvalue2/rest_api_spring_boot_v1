@@ -1,0 +1,78 @@
+{
+  "chapter": "user-update",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-이메일-수정.json",
+      "task": "T1",
+      "commit": "10f05d4",
+      "screen": "PUT /api/users/me",
+      "see": "ssar 토큰으로 빈 비밀번호와 ssar@nate.com을 보내면 200과 email ssar@nate.com이 온다",
+      "request": {
+        "method": "PUT",
+        "path": "/api/users/me",
+        "body": {
+          "email": "ssar@nate.com",
+          "password": ""
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5ODg1LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.4GUtX_vSuNXcnyeBt7ydiT-pHcNDUUi5YVDn1Vpy2sFIT_tH03_BgEYp7Hsh6JXzwRsUWO5BNVc0qhaTJGaCEQ"
+        }
+      }
+    },
+    {
+      "file": "T2-비밀번호-수정.json",
+      "task": "T2",
+      "commit": "1c3dbbe",
+      "screen": "PUT /api/users/me",
+      "see": "ssar 토큰으로 비밀번호 5678과 ssar@nate.com을 보내면 200과 email ssar@nate.com이 온다",
+      "request": {
+        "method": "PUT",
+        "path": "/api/users/me",
+        "body": {
+          "email": "ssar@nate.com",
+          "password": "5678"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5OTA4LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.k-NwTHJ3V-QhxYaEkvXneseu5Q2u1lUloG6X7yTh6rVw7VLA2m17---jJ5UzluJ9qBYHJqjwisFGl6PQghwUYQ"
+        }
+      }
+    },
+    {
+      "file": "T3-비밀번호-검사.json",
+      "task": "T3",
+      "commit": "1435cab",
+      "screen": "PUT /api/users/me",
+      "see": "비밀번호 12를 보내면 400과 비밀번호는 4~20자여야 합니다가 온다",
+      "request": {
+        "method": "PUT",
+        "path": "/api/users/me",
+        "body": {
+          "email": "ssar@nate.com",
+          "password": "12"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5OTMxLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.IOyjTCyAV04yYE3RpmPCj7CvC_dZDJSRDHBGZhDwAADWUZgcXFeBCgrav0GgCr5XSyM1VXHMELIAudeX5QV0HQ"
+        }
+      }
+    },
+    {
+      "file": "done-내-정보-수정.json",
+      "task": "done",
+      "commit": "1435cab",
+      "screen": "PUT /api/users/me",
+      "see": "ssar 토큰으로 빈 비밀번호와 ssar@nate.com을 보내면 200과 id, username, email이 온다",
+      "request": {
+        "method": "PUT",
+        "path": "/api/users/me",
+        "body": {
+          "email": "ssar@nate.com",
+          "password": ""
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5OTUyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.WZwBUPTYA8kFHZ1Jdg0N71fkuyP8YzsMiv2bAAXSwPEwwGOaBZwOWs6eST1qwPuAJGjnw69bkweUw90iE7_QSA"
+        }
+      }
+    }
+  ]
+}
