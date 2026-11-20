@@ -1,6 +1,6 @@
 # board-write 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 글쓰기 API 만들기
   - 근거: S1, S2, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java, server-spring/src/main/java/com/newtenco/blog/board/Board.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
