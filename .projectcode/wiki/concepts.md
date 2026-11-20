@@ -17,7 +17,7 @@
 | Repository | board-list |
 | data.sql | board-list |
 | 공통 응답 Resp | board-list |
-| 응답 DTO | board-detail |
+| 응답 DTO | board-list |
 | 사용자 예외 | board-detail |
 | 전역 예외 처리 404 | board-detail |
 | Pageable, Page | board-paging |
