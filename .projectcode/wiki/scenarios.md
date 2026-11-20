@@ -181,3 +181,28 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
 - server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java
 - server-spring/src/main/java/com/newtenco/blog/board/Board.java
+
+## 글 수정과 삭제
+
+```mermaid
+flowchart LR
+  A[GET edit, PUT, DELETE /api/boards/id] --> B[JwtAuthorizationFilter]
+  B --> C[BoardController]
+  C --> D[BoardService]
+  D --> E[BoardRepository]
+  E --> F[(board_tb)]
+  D --> G[ForbiddenException]
+  D --> H[NotFoundException]
+  G --> I[GlobalExceptionHandler]
+  H --> I
+```
+
+만든 장: board-update-delete
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java
+- server-spring/src/main/java/com/newtenco/blog/board/Board.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/errors/ForbiddenException.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+- server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java

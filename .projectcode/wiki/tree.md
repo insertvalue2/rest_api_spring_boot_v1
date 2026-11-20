@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: board-write 장 끝
+기준: board-update-delete 장 끝
 
 ```
 gradle/
@@ -22,7 +22,7 @@ server-spring/
                 Board.java   고침
                 BoardController.java   고침
                 BoardRepository.java
-                BoardRequest.java   새로
+                BoardRequest.java   고침
                 BoardResponse.java
                 BoardService.java   고침
               core/
@@ -31,14 +31,15 @@ server-spring/
                 handler/
                   errors/
                     BadRequestException.java
+                    ForbiddenException.java   새로
                     NotFoundException.java
                     UnauthorizedException.java
-                  GlobalExceptionHandler.java
+                  GlobalExceptionHandler.java   고침
                 util/
                   JwtUtil.java
                   Resp.java
                   RespFilter.java
-                SecurityConfig.java
+                SecurityConfig.java   고침
               user/
                 User.java
                 UserController.java
