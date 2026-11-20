@@ -8,8 +8,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Service
@@ -17,11 +15,9 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public List<BoardResponse.ListDTO> 글목록(Integer page) {
+    public BoardResponse.PageDTO 글목록(Integer page) {
         Pageable pageable = PageRequest.of(page, 3, Sort.by(Sort.Direction.DESC, "id"));
-        return boardRepository.findAllJoinUser(pageable).getContent().stream()
-                .map(BoardResponse.ListDTO::new)
-                .toList();
+        return new BoardResponse.PageDTO(boardRepository.findAllJoinUser(pageable));
     }
 
     public BoardResponse.DetailDTO 글상세(Integer id) {

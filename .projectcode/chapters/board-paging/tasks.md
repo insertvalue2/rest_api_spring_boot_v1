@@ -7,7 +7,7 @@
   - 실행하면: GET /api/boards가 글 5, 4, 3만 주고, ?page=1은 글 2, 1을 준다. body는 아직 배열이다
   - Why: 글이 많아지면 한 번에 다 주지 않고 쪽으로 나눠 줘야 한다
   - 다른 장: board-list
-- [ ] T2 쪽 정보 함께 주기
+- [x] T2 쪽 정보 함께 주기
   - 근거: S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
   - 실행하면: body가 boards와 number 0, totalPage 2, isFirst true, isLast false로 온다
