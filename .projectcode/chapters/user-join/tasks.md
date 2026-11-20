@@ -30,7 +30,7 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: ?username=ssar은 available false, ?username=love는 true
   - Why: 가입 버튼을 누르기 전에 아이디를 쓸 수 있는지 미리 알려 준다
-- [ ] T6 요청 값이 빠지면 400으로 알리기
+- [x] T6 요청 값이 빠지면 400으로 알리기
   - 근거: S7
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: /check-username만 부르면 400 username:값을 입력해주세요
