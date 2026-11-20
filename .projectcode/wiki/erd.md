@@ -1,9 +1,10 @@
 # ERD
 
-기준: reply 장 끝
+기준: admin-api 장 끝
 
 ```mermaid
 erDiagram
+  user_tb ||--o{ user_role_tb : ""
   user_tb ||--o{ board_tb : ""
   user_tb ||--o{ reply_tb : ""
   board_tb ||--o{ reply_tb : ""
@@ -13,6 +14,10 @@ erDiagram
     varchar password
     varchar email
     timestamp created_at
+  }
+  user_role_tb {
+    integer user_id FK
+    varchar role
   }
   board_tb {
     integer id PK

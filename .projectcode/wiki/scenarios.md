@@ -286,3 +286,26 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/user/UserService.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java
 - server-spring/src/main/java/com/newtenco/blog/user/User.java
+
+## 관리자 기능
+
+```mermaid
+flowchart LR
+  A[GET hello, DELETE boards /api/admin] --> B[JwtAuthorizationFilter]
+  B --> C[JwtUtil roles]
+  B --> D[SecurityConfig hasRole ADMIN]
+  D --> E[AdminController]
+  E --> F[AdminService]
+  F --> G[BoardRepository]
+  G --> H[(board_tb)]
+```
+
+만든 장: admin-api
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
+- server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java
+- server-spring/src/main/java/com/newtenco/blog/user/User.java
+- server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java
+- server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java
+- server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+- server-spring/src/main/resources/db/data.sql

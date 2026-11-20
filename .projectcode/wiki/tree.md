@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: user-update 장 끝
+기준: admin-api 장 끝
 
 ```
 gradle/
@@ -18,6 +18,9 @@ server-spring/
         com/
           newtenco/
             blog/
+              admin/
+                AdminController.java   새로
+                AdminService.java   새로
               board/
                 Board.java
                 BoardController.java
@@ -27,7 +30,7 @@ server-spring/
                 BoardService.java
               core/
                 filter/
-                  JwtAuthorizationFilter.java
+                  JwtAuthorizationFilter.java   고침
                 handler/
                   errors/
                     BadRequestException.java
@@ -36,10 +39,10 @@ server-spring/
                     UnauthorizedException.java
                   GlobalExceptionHandler.java
                 util/
-                  JwtUtil.java
+                  JwtUtil.java   고침
                   Resp.java
                   RespFilter.java
-                SecurityConfig.java
+                SecurityConfig.java   고침
               reply/
                 Reply.java
                 ReplyController.java
@@ -49,15 +52,15 @@ server-spring/
                 ReplyService.java
               user/
                 User.java   고침
-                UserController.java   고침
+                UserController.java
                 UserRepository.java
-                UserRequest.java   고침
+                UserRequest.java
                 UserResponse.java
-                UserService.java   고침
+                UserService.java
               BlogApplication.java
       resources/
         db/
-          data.sql
+          data.sql   고침
         application.properties
   .gitignore
   build.gradle

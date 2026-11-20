@@ -47,6 +47,8 @@
 | 조건부 검증 | user-update |
 | 역할, hasRole | admin-api |
 | 관리자 전용 주소 | admin-api |
+| 컬렉션 값 바꾸기 | admin-roles |
+| 역할 검사 | admin-roles |
 | 토큰 저장 | refresh-token |
 | 재발급 회전 | refresh-token |
 | 로그아웃 | refresh-token |

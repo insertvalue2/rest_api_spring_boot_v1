@@ -61,3 +61,8 @@
 처음 나온 장: user-update
 장 끝 사진: chapters/user-update/captures/done-내-정보-수정.json
 보이는 것: 빈 비밀번호로 보내면 이메일만 바뀌고 200
+
+## /api/admin/**
+처음 나온 장: admin-api
+장 끝 사진: chapters/admin-api/captures/done-관리자-권한.json
+보이는 것: ssar(USER) 토큰으로 GET /api/admin/hello는 403 권한이 없습니다
