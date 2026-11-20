@@ -13,7 +13,7 @@
   - 실행하면: GET /api/boards/99가 status 404, msg 게시글을 찾을 수 없습니다, body null로 온다
   - Why: 예외를 한 곳에서 잡아야 모든 실패가 같은 모양으로 나간다
   - 다른 장: board-list
-- [ ] T3 처리하지 못한 오류 감싸기
+- [x] T3 처리하지 못한 오류 감싸기
   - 근거: S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: GET /api/boards/abc가 status 500, msg 관리자에게 문의하세요로 온다. 없는 주소도 500이 된다
