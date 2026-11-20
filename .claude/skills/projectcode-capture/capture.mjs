@@ -103,10 +103,10 @@ async function takeScreen(browser, shot) {
 }
 
 async function takeRequest(shot) {
-  const { method, path, body } = shot.request
+  const { method, path, body, headers } = shot.request
   const response = await fetch(spec.api + path, {
     method,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...(headers || {}) },
     body: body ? JSON.stringify(body) : undefined,
   })
   const text = await response.text()
@@ -117,6 +117,9 @@ async function takeRequest(shot) {
     parsed = text
   }
   const result = { request: shot.request, status: response.status, contentType: response.headers.get("content-type"), response: parsed }
+  if (shot.responseHeaders) {
+    result.headers = Object.fromEntries(shot.responseHeaders.map((name) => [name, response.headers.get(name)]))
+  }
   writeFileSync(join(outDir, shot.file), JSON.stringify(result, null, 2))
 }
 

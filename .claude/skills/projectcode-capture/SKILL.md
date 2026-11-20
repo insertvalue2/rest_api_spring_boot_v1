@@ -146,7 +146,8 @@ projectcode-fix의 샌드박스가 이 순서를 쓴다. 다른 점은 둘이다
 | storage | true면 찍을 때의 localStorage를 .storage.json으로 남긴다 |
 | requests | true면 서버로 간 요청의 주소, 토큰, 보낸 값, 응답 상태를 .requests.json으로 남긴다 |
 | hold | 받는 중인 화면을 찍는다. steps 뒤 api 응답을 붙잡은 채 path로 가서 찍는다. 예: { "path": "/", "api": "/?page=0" } |
-| request | 화면 대신 API를 부른다. method, path, body |
+| request | 화면 대신 API를 부른다. method, path, body, headers(보낼 요청 헤더) |
+| responseHeaders | request 사진에서 남길 응답 헤더 이름 목록. 예: ["Authorization"] |
 | command, cwd | run 사진이 실행할 명령과 폴더. cwd는 worktree 루트에서 본 경로다 |
 | run | 명령을 실행해 출력을 .txt로 남긴다. input은 표준 입력, command와 cwd를 사진마다 바꿀 수도 있다 |
 | missing | fix 뒤 다시 찍지 못한 사진. 찍지 않고 captures.md에 그렇게 적는다 |
