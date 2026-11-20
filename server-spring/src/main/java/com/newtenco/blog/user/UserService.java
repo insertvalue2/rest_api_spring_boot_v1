@@ -23,4 +23,9 @@ public class UserService {
         User savedUser = userRepository.save(reqDTO.toEntity(encPassword));
         return new UserResponse.DTO(savedUser);
     }
+
+    public UserResponse.AvailableDTO 유저네임중복체크(String username) {
+        boolean available = !userRepository.existsByUsername(username);
+        return new UserResponse.AvailableDTO(available);
+    }
 }

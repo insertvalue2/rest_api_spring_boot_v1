@@ -25,7 +25,7 @@
   - 실행하면: ssar로 가입하면 400 이미 존재하는 유저네임입니다
   - Why: unique 제약에 걸려 500이 나기 전에 사람이 읽을 이유로 알려 준다
   - 다른 장: board-detail
-- [ ] T5 아이디 중복 확인 API
+- [x] T5 아이디 중복 확인 API
   - 근거: S6
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: ?username=ssar은 available false, ?username=love는 true

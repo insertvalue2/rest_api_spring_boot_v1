@@ -8,4 +8,7 @@ public class UserResponse {
             this(user.getId(), user.getUsername(), user.getEmail());
         }
     }
+
+    public record AvailableDTO(boolean available) {
+    }
 }
