@@ -1,6 +1,6 @@
 # board-update-delete 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 수정 화면 정보 보기
   - 근거: S1, S7
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
