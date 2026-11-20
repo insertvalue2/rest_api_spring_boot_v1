@@ -33,6 +33,7 @@ class UserJoinTest {
     @AfterEach
     void removeJoinedUsers() throws Exception {
         try (Connection connection = dataSource.getConnection()) {
+            connection.createStatement().executeUpdate("delete from user_role_tb where user_id in (select id from user_tb where username not in ('ssar', 'cos'))");
             connection.createStatement().executeUpdate("delete from user_tb where username not in ('ssar', 'cos')");
         }
     }

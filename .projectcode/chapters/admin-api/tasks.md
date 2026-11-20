@@ -1,6 +1,6 @@
 # admin-api 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 역할을 저장하고 토큰에 담기
   - 근거: S1, S2
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/resources/db/data.sql, server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java
