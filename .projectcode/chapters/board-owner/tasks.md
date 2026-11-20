@@ -18,6 +18,6 @@
   - 파일: tests/com/newtenco/blog/BoardOwnerTest.java
   - 실행하면: 틀린 토큰으로 글 5를 보면 댓글 owner가 모두 false다
   - Why: 테스트가 spec의 할 일을 모두 확인해야 장이 끝났다고 말할 수 있다
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식

@@ -1,0 +1,39 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards/5",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5Mzc5LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.dZDLe05sx9JckbfPbWHdKcXFPYsspC_wJf5FUaP89GT3I05WKNwqqJ4Wt0BVpe-6XcwRYJGF-P7Os0UF9XaBzw"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 5,
+      "title": "제목5",
+      "content": "내용5",
+      "userId": 2,
+      "username": "cos",
+      "owner": false,
+      "replies": [
+        {
+          "id": 4,
+          "comment": "댓글4",
+          "userId": 1,
+          "username": "ssar",
+          "owner": true
+        },
+        {
+          "id": 5,
+          "comment": "댓글5",
+          "userId": 1,
+          "username": "ssar",
+          "owner": true
+        }
+      ]
+    }
+  }
+}

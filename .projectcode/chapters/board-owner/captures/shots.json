@@ -1,0 +1,48 @@
+{
+  "chapter": "board-owner",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-내-글-owner.json",
+      "task": "T1",
+      "commit": "f232157",
+      "screen": "GET /api/boards/1",
+      "see": "ssar 토큰으로 글 1을 보면 owner가 true다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/1",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5MzUwLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.i-E3twGvNEDKUuYXM-n90Hs7fJJ4XVnTOV2NJM9rcS8GvfLBwjIiuTTK6z_1tzdT5y5_5mwBkEnEwuWbjFU4bQ"
+        }
+      }
+    },
+    {
+      "file": "T2-내-댓글-owner.json",
+      "task": "T2",
+      "commit": "017576a",
+      "screen": "GET /api/boards/5",
+      "see": "ssar 토큰으로 글 5를 보면 글 owner는 false, 댓글4와 댓글5 owner는 true다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/5",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5MzY1LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.EcOwv9O2bjAC2ipsZVb09wEHlgH4ZHwW2WcekOe3svikNEW2LxObSjZUipN1vpLNGQePVF4gFE1DLathJQSogw"
+        }
+      }
+    },
+    {
+      "file": "done-글-상세-owner.json",
+      "task": "done",
+      "commit": "017576a",
+      "screen": "GET /api/boards/5",
+      "see": "ssar 토큰으로 글 5를 보면 글 owner는 false, 댓글4와 댓글5 owner는 true다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/5",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU5Mzc5LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.dZDLe05sx9JckbfPbWHdKcXFPYsspC_wJf5FUaP89GT3I05WKNwqqJ4Wt0BVpe-6XcwRYJGF-P7Os0UF9XaBzw"
+        }
+      }
+    }
+  ]
+}
