@@ -1,5 +1,7 @@
 package com.newtenco.blog.user;
 
+import java.util.List;
+
 public class UserResponse {
 
     public record DTO(Integer id, String username, String email) {
@@ -13,5 +15,12 @@ public class UserResponse {
     }
 
     public record AvailableDTO(boolean available) {
+    }
+
+    public record RolesDTO(Integer id, String username, List<String> roles) {
+
+        public RolesDTO(User user) {
+            this(user.getId(), user.getUsername(), user.getRoles());
+        }
     }
 }

@@ -69,4 +69,9 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+    public void updateRoles(List<String> roles) {
+        this.roles.clear();
+        this.roles.addAll(roles);
+    }
 }

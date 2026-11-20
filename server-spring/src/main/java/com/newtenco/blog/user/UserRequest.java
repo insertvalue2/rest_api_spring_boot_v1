@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 public class UserRequest {
 
     public record JoinDTO(
@@ -48,5 +50,8 @@ public class UserRequest {
         public boolean isPasswordChange() {
             return password != null && !password.isEmpty();
         }
+    }
+
+    public record RolesDTO(List<String> roles) {
     }
 }

@@ -1,7 +1,7 @@
 # admin-roles 작업
 
 - [x] 테스트 작성
-- [ ] T1 회원 역할 바꾸기
+- [x] T1 회원 역할 바꾸기
   - 근거: S1, S2, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
   - 실행하면: cos 토큰으로 PUT /api/admin/users/1 roles USER, ADMIN이 200이고 ssar이 다시 로그인하면 관리자 주소가 열린다
