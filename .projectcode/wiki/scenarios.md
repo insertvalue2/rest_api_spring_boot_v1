@@ -206,3 +206,46 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/core/handler/errors/ForbiddenException.java
 - server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
 - server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+
+## 글 상세와 댓글 보기
+
+```mermaid
+flowchart LR
+  A[GET /api/boards/id] --> B[BoardController]
+  B --> C[BoardService]
+  C --> D[BoardRepository]
+  D --> E[(board_tb)]
+  D --> F[(reply_tb)]
+  D --> G[(user_tb)]
+  C --> H[BoardResponse.DetailDTO]
+  H --> I[ReplyDTO]
+```
+
+만든 장: board-detail, reply
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java
+- server-spring/src/main/java/com/newtenco/blog/board/Board.java
+- server-spring/src/main/java/com/newtenco/blog/reply/Reply.java
+
+## 댓글 쓰기와 삭제
+
+```mermaid
+flowchart LR
+  A[POST, DELETE /api/replies] --> B[JwtAuthorizationFilter]
+  B --> C[ReplyController]
+  C --> D[ReplyService]
+  D --> E[ReplyRepository]
+  D --> F[BoardRepository]
+  E --> G[(reply_tb)]
+  D --> H[ForbiddenException]
+```
+
+만든 장: reply
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/reply/ReplyController.java
+- server-spring/src/main/java/com/newtenco/blog/reply/ReplyService.java
+- server-spring/src/main/java/com/newtenco/blog/reply/ReplyRepository.java
+- server-spring/src/main/java/com/newtenco/blog/reply/ReplyRequest.java
+- server-spring/src/main/java/com/newtenco/blog/reply/ReplyResponse.java
+- server-spring/src/main/java/com/newtenco/blog/reply/Reply.java

@@ -4,12 +4,12 @@
 
 | 점검 | 결과 |
 |---|---|
-| 장 상태 | project-setup부터 board-update-delete까지 아홉 장 완료. tasks.md 모두 체크, done 태그 있음 |
-| 진행 중 | reply 하나 |
-| 장 자료 | 완료인 아홉 장에 captures.md, tree.md, summary-code.md 있음 |
-| 사진 | captures.md의 파일 42개 모두 있음 |
+| 장 상태 | project-setup부터 reply까지 열 장 완료. tasks.md 모두 체크, done 태그 있음 |
+| 진행 중 | board-owner 하나 |
+| 장 자료 | 완료인 열 장에 captures.md, tree.md, summary-code.md 있음 |
+| 사진 | captures.md의 파일 47개 모두 있음 |
 | 미룬 것 | 없음 |
-| 테스트 | 완료인 장의 테스트 46개 모두 통과 |
+| 테스트 | 완료인 장의 테스트 53개 모두 통과 |
 
 참고
 - board-list T1, T2 사진은 API가 아직 없어 404를 남겼다. 사용자가 그대로 두기로 정했다
@@ -17,4 +17,5 @@
 - user-login T1, T2 사진은 401과 jwt.io 화면을 see에서 뺐다. S3, S4 테스트가 확인한다
 - board-write T1 사진은 목록 첫 줄 확인을 see에서 뺐다. S2 테스트가 확인한다
 - board-update-delete T1, T3, T4 사진은 두 번째 요청이 필요한 확인(401, 상세 반영, 상세 404)을 see에서 뺐다. S7, S2, S3 테스트가 확인한다
-- erd는 board-list 장 끝과 같다. 그 뒤 장은 테이블 칸을 바꾸지 않았다
+- reply 사진은 두 번째 요청이 필요한 확인을 see에서 뺐다. ReplyTest가 확인한다
+- erd는 reply 장 끝 기준이다. reply_tb가 더해졌다

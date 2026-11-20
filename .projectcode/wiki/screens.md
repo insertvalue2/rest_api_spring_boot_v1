@@ -46,3 +46,8 @@
 처음 나온 장: board-update-delete
 장 끝 사진: chapters/board-update-delete/captures/done-남의-글-삭제.json
 보이는 것: ssar 토큰으로 cos의 글 4를 지우면 403 게시글을 삭제할 권한이 없습니다
+
+## POST, DELETE /api/replies
+처음 나온 장: reply
+장 끝 사진: chapters/reply/captures/done-글-상세.json
+보이는 것: 글 4 상세에 replies로 댓글 목록이 담겨 온다
