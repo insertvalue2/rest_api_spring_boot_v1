@@ -17,7 +17,7 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/reply/ReplyService.java, server-spring/src/main/java/com/newtenco/blog/reply/ReplyController.java
   - 실행하면: ssar 토큰으로 DELETE /api/replies/4는 200, DELETE /api/replies/1(cos)은 403
   - Why: 글 삭제처럼 주인 확인을 거친 뒤에만 지운다
-- [ ] T4 글 지울 때 댓글도 지우기
+- [x] T4 글 지울 때 댓글도 지우기
   - 근거: S7
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/Board.java
   - 실행하면: cos 토큰으로 DELETE /api/boards/4가 200이고 댓글 1~3도 사라진다. 이 줄이 없으면 외래키 때문에 500이 난다
