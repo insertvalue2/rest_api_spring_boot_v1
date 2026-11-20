@@ -1,10 +1,14 @@
 package com.newtenco.blog.board;
 
 import com.newtenco.blog.core.util.Resp;
+import com.newtenco.blog.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +22,11 @@ public class BoardController {
     public ResponseEntity<?> list(@RequestParam(value = "page", defaultValue = "0") Integer page,
                                   @RequestParam(value = "keyword", defaultValue = "") String keyword) {
         return Resp.ok(boardService.글목록(page, keyword));
+    }
+
+    @PostMapping("/api/boards")
+    public ResponseEntity<?> save(@AuthenticationPrincipal User sessionUser, @RequestBody BoardRequest.SaveDTO reqDTO) {
+        return Resp.ok(boardService.글쓰기(reqDTO, sessionUser));
     }
 
     @GetMapping("/api/boards/{id}")

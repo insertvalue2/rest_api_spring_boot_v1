@@ -1,7 +1,7 @@
 # board-write 작업
 
 - [x] 테스트 작성
-- [ ] T1 글쓰기 API 만들기
+- [x] T1 글쓰기 API 만들기
   - 근거: S1, S2, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java, server-spring/src/main/java/com/newtenco/blog/board/Board.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: 토큰을 담아 POST /api/boards를 부르면 id 6, username ssar인 글이 오고, 목록 첫 줄이 제목6이다
