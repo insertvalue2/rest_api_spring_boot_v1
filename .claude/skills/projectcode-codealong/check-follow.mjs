@@ -63,7 +63,8 @@ const blobs = new Map()
     const nl = buf.indexOf(10, pos)
     const [hash, , size] = buf.subarray(pos, nl).toString().split(" ")
     const start = nl + 1
-    blobs.set(hash, buf.subarray(start, start + Number(size)).toString("utf8"))
+    const raw = buf.subarray(start, start + Number(size))
+    blobs.set(hash, raw.includes(0) ? Buffer.from(raw) : raw.toString("utf8"))
     pos = start + Number(size) + 1
   }
 }
