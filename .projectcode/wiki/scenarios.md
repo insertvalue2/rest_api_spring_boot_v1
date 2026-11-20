@@ -249,3 +249,20 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/reply/ReplyRequest.java
 - server-spring/src/main/java/com/newtenco/blog/reply/ReplyResponse.java
 - server-spring/src/main/java/com/newtenco/blog/reply/Reply.java
+
+## 내 글, 내 댓글 표시 (선택 인증)
+
+```mermaid
+flowchart LR
+  A[GET /api/boards/id 토큰 선택] --> B[JwtAuthorizationFilter]
+  B --> C[BoardController]
+  C --> D[BoardService]
+  D --> E[BoardResponse.DetailDTO owner]
+  E --> F[ReplyDTO owner]
+```
+
+만든 장: board-owner
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java

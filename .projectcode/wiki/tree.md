@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: reply 장 끝
+기준: board-owner 장 끝
 
 ```
 gradle/
@@ -19,9 +19,9 @@ server-spring/
           newtenco/
             blog/
               board/
-                Board.java   고침
-                BoardController.java
-                BoardRepository.java   고침
+                Board.java
+                BoardController.java   고침
+                BoardRepository.java
                 BoardRequest.java
                 BoardResponse.java   고침
                 BoardService.java   고침
@@ -41,12 +41,12 @@ server-spring/
                   RespFilter.java
                 SecurityConfig.java
               reply/
-                Reply.java   새로
-                ReplyController.java   새로
-                ReplyRepository.java   새로
-                ReplyRequest.java   새로
-                ReplyResponse.java   새로
-                ReplyService.java   새로
+                Reply.java
+                ReplyController.java
+                ReplyRepository.java
+                ReplyRequest.java
+                ReplyResponse.java
+                ReplyService.java
               user/
                 User.java
                 UserController.java
@@ -57,7 +57,7 @@ server-spring/
               BlogApplication.java
       resources/
         db/
-          data.sql   고침
+          data.sql
         application.properties
   .gitignore
   build.gradle

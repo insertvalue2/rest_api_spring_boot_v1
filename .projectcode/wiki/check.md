@@ -4,12 +4,12 @@
 
 | 점검 | 결과 |
 |---|---|
-| 장 상태 | project-setup부터 reply까지 열 장 완료. tasks.md 모두 체크, done 태그 있음 |
-| 진행 중 | board-owner 하나 |
-| 장 자료 | 완료인 열 장에 captures.md, tree.md, summary-code.md 있음 |
-| 사진 | captures.md의 파일 47개 모두 있음 |
+| 장 상태 | project-setup부터 board-owner까지 열한 장 완료. tasks.md 모두 체크, done 태그 있음 |
+| 진행 중 | user-update 하나 |
+| 장 자료 | 완료인 열한 장에 captures.md, tree.md, summary-code.md 있음 |
+| 사진 | captures.md의 파일 50개 모두 있음 |
 | 미룬 것 | 없음 |
-| 테스트 | 완료인 장의 테스트 53개 모두 통과 |
+| 테스트 | 완료인 장의 테스트 57개 모두 통과 |
 
 참고
 - board-list T1, T2 사진은 API가 아직 없어 404를 남겼다. 사용자가 그대로 두기로 정했다

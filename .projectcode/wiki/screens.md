@@ -51,3 +51,8 @@
 처음 나온 장: reply
 장 끝 사진: chapters/reply/captures/done-글-상세.json
 보이는 것: 글 4 상세에 replies로 댓글 목록이 담겨 온다
+
+## GET /api/boards/{id} owner
+처음 나온 장: board-owner
+장 끝 사진: chapters/board-owner/captures/done-글-상세-owner.json
+보이는 것: ssar 토큰으로 글 5를 보면 글 owner false, 댓글 4, 5 owner true
