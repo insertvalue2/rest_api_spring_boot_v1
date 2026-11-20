@@ -1,6 +1,6 @@
 # ERD
 
-기준: admin-api 장 끝
+기준: refresh-token 장 끝
 
 ```mermaid
 erDiagram
@@ -8,6 +8,7 @@ erDiagram
   user_tb ||--o{ board_tb : ""
   user_tb ||--o{ reply_tb : ""
   board_tb ||--o{ reply_tb : ""
+  user_tb ||--o{ refresh_token_tb : ""
   user_tb {
     integer id PK
     varchar username
@@ -32,5 +33,11 @@ erDiagram
     integer user_id FK
     integer board_id FK
     timestamp created_at
+  }
+  refresh_token_tb {
+    integer id PK
+    varchar token
+    integer user_id FK
+    timestamp expires_at
   }
 ```

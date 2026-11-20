@@ -329,3 +329,29 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/user/User.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java
+
+## 토큰 재발급과 로그아웃
+
+```mermaid
+flowchart LR
+  A[POST /login] --> B[UserService]
+  B --> C[RefreshTokenService 발급]
+  D[POST /reissue] --> E[AuthController]
+  F[POST /logout] --> E
+  E --> G[RefreshTokenService]
+  C --> H[(refresh_token_tb)]
+  G --> H
+  G --> I[JwtUtil]
+```
+
+만든 장: refresh-token
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/auth/AuthController.java
+- server-spring/src/main/java/com/newtenco/blog/auth/AuthRequest.java
+- server-spring/src/main/java/com/newtenco/blog/auth/AuthResponse.java
+- server-spring/src/main/java/com/newtenco/blog/auth/RefreshToken.java
+- server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenRepository.java
+- server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+- server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java

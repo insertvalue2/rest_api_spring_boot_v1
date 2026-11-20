@@ -71,3 +71,8 @@
 처음 나온 장: admin-roles
 장 끝 사진: chapters/admin-roles/captures/done-역할-바꾸기.json
 보이는 것: cos 토큰으로 ssar 역할을 USER, ADMIN으로 바꾸면 200과 roles
+
+## POST /reissue, POST /logout
+처음 나온 장: refresh-token
+장 끝 사진: chapters/refresh-token/captures/done-재발급.json
+보이는 것: 리프레시 토큰으로 재발급하면 200과 새 Authorization, 새 Refresh-Token 헤더

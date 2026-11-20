@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: admin-roles 장 끝
+기준: refresh-token 장 끝
 
 ```
 gradle/
@@ -19,8 +19,15 @@ server-spring/
           newtenco/
             blog/
               admin/
-                AdminController.java   고침
-                AdminService.java   고침
+                AdminController.java
+                AdminService.java
+              auth/
+                AuthController.java   새로
+                AuthRequest.java   새로
+                AuthResponse.java   새로
+                RefreshToken.java   새로
+                RefreshTokenRepository.java   새로
+                RefreshTokenService.java   새로
               board/
                 Board.java
                 BoardController.java
@@ -42,7 +49,7 @@ server-spring/
                   JwtUtil.java
                   Resp.java
                   RespFilter.java
-                SecurityConfig.java
+                SecurityConfig.java   고침
               reply/
                 Reply.java
                 ReplyController.java
@@ -51,12 +58,12 @@ server-spring/
                 ReplyResponse.java
                 ReplyService.java
               user/
-                User.java   고침
-                UserController.java
+                User.java
+                UserController.java   고침
                 UserRepository.java
-                UserRequest.java   고침
+                UserRequest.java
                 UserResponse.java   고침
-                UserService.java
+                UserService.java   고침
               BlogApplication.java
       resources/
         db/
