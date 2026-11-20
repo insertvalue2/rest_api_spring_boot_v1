@@ -27,6 +27,12 @@ public class BoardService {
         return new BoardResponse.ListDTO(savedBoard);
     }
 
+    public BoardResponse.ListDTO 글수정정보(Integer id) {
+        Board board = boardRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));
+        return new BoardResponse.ListDTO(board);
+    }
+
     public BoardResponse.DetailDTO 글상세(Integer id) {
         Board board = boardRepository.findByIdJoinUser(id)
                 .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));

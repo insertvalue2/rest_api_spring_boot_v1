@@ -30,6 +30,11 @@ public class BoardController {
         return Resp.ok(boardService.글쓰기(reqDTO, sessionUser));
     }
 
+    @GetMapping("/api/boards/{id}/edit")
+    public ResponseEntity<?> updateInfo(@PathVariable("id") Integer id) {
+        return Resp.ok(boardService.글수정정보(id));
+    }
+
     @GetMapping("/api/boards/{id}")
     public ResponseEntity<?> detail(@PathVariable("id") Integer id) {
         return Resp.ok(boardService.글상세(id));

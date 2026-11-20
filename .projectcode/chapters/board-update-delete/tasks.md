@@ -1,8 +1,8 @@
 # board-update-delete 작업
 
 - [x] 테스트 작성
-- [ ] T1 수정 화면 정보 보기
-  - 근거: S1, S7
+- [x] T1 수정 화면 정보 보기
+  - 근거: S1, S5, S7
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: ssar 토큰으로 GET /api/boards/1/edit가 제목1, 내용1을 주고, 토큰 없이는 401이다
   - Why: 수정 화면은 기존 내용을 채워 보여 줘야 하고, 로그인한 사람만 볼 수 있어야 한다
