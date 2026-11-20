@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody UserRequest.LoginDTO reqDTO) {
+    public ResponseEntity<?> login(@Valid @RequestBody UserRequest.LoginDTO reqDTO) {
         UserResponse.LoginDTO loginDTO = userService.로그인(reqDTO);
         return ResponseEntity.ok()
                 .header(JwtUtil.HEADER, loginDTO.accessToken())

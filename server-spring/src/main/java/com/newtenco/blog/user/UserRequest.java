@@ -28,6 +28,11 @@ public class UserRequest {
         }
     }
 
-    public record LoginDTO(String username, String password) {
+    public record LoginDTO(
+            @NotBlank(message = "유저네임을 입력해주세요")
+            String username,
+
+            @NotBlank(message = "비밀번호를 입력해주세요")
+            String password) {
     }
 }

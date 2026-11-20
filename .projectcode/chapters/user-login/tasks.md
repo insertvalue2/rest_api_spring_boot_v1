@@ -13,7 +13,7 @@
   - 실행하면: 응답 헤더 Authorization에 Bearer eyJ...가 오고, jwt.io에 넣으면 id 1, username ssar, exp가 보인다
   - Why: 서버가 세션을 기억하지 않아도 다음 요청에서 누구인지 알 수 있게 서명한 토큰을 준다
   - 다른 장: project-setup, user-join
-- [ ] T3 빈 값 검사하기
+- [x] T3 빈 값 검사하기
   - 근거: S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: 비밀번호를 비우면 400 비밀번호를 입력해주세요
