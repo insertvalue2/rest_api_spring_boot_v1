@@ -1,6 +1,6 @@
 # refresh-token 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 로그인 때 리프레시 토큰 주기
   - 근거: S1, S7
   - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshToken.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenRepository.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
