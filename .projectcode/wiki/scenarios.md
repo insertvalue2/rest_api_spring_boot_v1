@@ -16,20 +16,21 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/BlogApplication.java
 - server-spring/src/main/resources/application.properties
 
-## 글 목록 보기
+## 글 목록 보기와 검색
 
 ```mermaid
 flowchart LR
-  A[GET /api/boards] --> B[BoardController]
+  A[GET /api/boards?page&keyword] --> B[BoardController]
   B --> C[BoardService]
   C --> D[BoardRepository]
   D --> E[(board_tb)]
   D --> F[(user_tb)]
-  C --> G[BoardResponse.ListDTO]
-  B --> H[Resp]
+  C --> G[BoardResponse.PageDTO]
+  G --> H[BoardResponse.ListDTO]
+  B --> I[Resp]
 ```
 
-만든 장: board-list
+만든 장: board-list, board-paging
 맡는 파일
 - server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
 - server-spring/src/main/java/com/newtenco/blog/board/BoardService.java

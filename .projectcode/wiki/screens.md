@@ -9,8 +9,8 @@
 
 ## GET /api/boards
 처음 나온 장: board-list
-장 끝 사진: chapters/board-list/captures/done-글-목록.json
-보이는 것: status 200, msg 성공, body에 글 5개가 id 5부터 작성자 아이디와 함께 온다
+장 끝 사진: chapters/board-paging/captures/done-쪽-나눈-목록.json
+보이는 것: 첫 쪽 글 5, 4, 3과 number 0, totalPage 2, isFirst true, isLast false
 
 ## GET /api/boards/{id}
 처음 나온 장: board-detail

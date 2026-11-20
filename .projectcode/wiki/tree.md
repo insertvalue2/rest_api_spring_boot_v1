@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: board-detail 장 끝
+기준: board-paging 장 끝
 
 ```
 gradle/
@@ -27,10 +27,10 @@ server-spring/
               core/
                 handler/
                   errors/
-                    NotFoundException.java   새로
-                  GlobalExceptionHandler.java   새로
+                    NotFoundException.java
+                  GlobalExceptionHandler.java
                 util/
-                  Resp.java   고침
+                  Resp.java
               user/
                 User.java
               BlogApplication.java
