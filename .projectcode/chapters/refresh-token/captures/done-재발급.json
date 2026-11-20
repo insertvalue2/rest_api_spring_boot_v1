@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/reissue",
+    "body": {
+      "refreshToken": "78bada2d-b06c-4e37-8159-6b0e3cdee0f6"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": null
+  },
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjYxMzYwLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIiwicm9sZXMiOlsiVVNFUiJdfQ.hVaU86fOo8o2N_4dqgf_0Ra0jS0osXYFMkm1BqpTgarW5kco1nPWFhi8xDhBSd3LPJ9FL1Yhxbc21WbLvzISpw",
+    "Refresh-Token": "0ce19fb5-c253-46ce-92ea-f31e531361d8"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/logout",
+    "body": {
+      "refreshToken": "da9fdeb2-f11a-41fa-b9c3-b597e6fbcc0a"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": null
+  }
+}

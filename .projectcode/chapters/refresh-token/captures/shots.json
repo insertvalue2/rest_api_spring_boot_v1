@@ -1,0 +1,75 @@
+{
+  "chapter": "refresh-token",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-리프레시-토큰-받기.json",
+      "task": "T1",
+      "commit": "a200bf8",
+      "screen": "POST /login",
+      "see": "ssar로 로그인하면 200이고 응답 헤더에 Authorization과 Refresh-Token이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/login",
+        "body": {
+          "username": "ssar",
+          "password": "1234"
+        }
+      },
+      "responseHeaders": [
+        "Authorization",
+        "Refresh-Token"
+      ]
+    },
+    {
+      "file": "T2-재발급.json",
+      "task": "T2",
+      "commit": "d1d0643",
+      "screen": "POST /reissue",
+      "see": "리프레시 토큰을 보내면 200이고 응답 헤더에 새 Authorization과 새 Refresh-Token이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/reissue",
+        "body": {
+          "refreshToken": "5103e435-fef3-4f26-b0ba-15d548638400"
+        }
+      },
+      "responseHeaders": [
+        "Authorization",
+        "Refresh-Token"
+      ]
+    },
+    {
+      "file": "T3-로그아웃.json",
+      "task": "T3",
+      "commit": "2343ab0",
+      "screen": "POST /logout",
+      "see": "리프레시 토큰을 보내면 200이고 body는 null이다",
+      "request": {
+        "method": "POST",
+        "path": "/logout",
+        "body": {
+          "refreshToken": "da9fdeb2-f11a-41fa-b9c3-b597e6fbcc0a"
+        }
+      }
+    },
+    {
+      "file": "done-재발급.json",
+      "task": "done",
+      "commit": "2343ab0",
+      "screen": "POST /reissue",
+      "see": "리프레시 토큰을 보내면 200이고 응답 헤더에 새 Authorization과 새 Refresh-Token이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/reissue",
+        "body": {
+          "refreshToken": "78bada2d-b06c-4e37-8159-6b0e3cdee0f6"
+        }
+      },
+      "responseHeaders": [
+        "Authorization",
+        "Refresh-Token"
+      ]
+    }
+  ]
+}
