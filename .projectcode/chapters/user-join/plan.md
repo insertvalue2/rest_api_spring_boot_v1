@@ -95,7 +95,7 @@ public ResponseEntity<?> validation(MethodArgumentNotValidException e) {
 - S1 GET /api/boards, /api/boards/1, /h2-console이 200
 - S2 POST /join이 200, body에 id, username, email
 - S3 DB의 password가 1234가 아니고 $2로 시작한다
-- S4 비밀번호 12, 이메일 형식 틀림이 400과 문구
+- S4 비밀번호 12, 아이디 abc, 이메일 형식 틀림이 400과 문구. 빈 문자열은 400과 두 문구 중 하나
 - S5 ssar로 가입하면 400 이미 존재하는 유저네임입니다
 - S6 ssar은 available false, 없는 아이디는 true
 - S7 username 없이 부르면 400 username:값을 입력해주세요
