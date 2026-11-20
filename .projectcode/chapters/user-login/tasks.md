@@ -1,0 +1,30 @@
+# user-login 작업
+
+- [ ] 테스트 작성
+- [ ] T1 로그인 API 만들기
+  - 근거: S1, S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/handler/errors/UnauthorizedException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+  - 실행하면: ssar/1234는 200과 회원 정보, 비밀번호 틀림은 401 유저네임 혹은 비밀번호가 일치하지 않습니다
+  - Why: 토큰을 주기 전에 먼저 아이디와 암호화된 비밀번호로 회원을 확인해야 한다
+  - 다른 장: user-join, board-detail
+- [ ] T2 JWT 만들어 헤더에 담기
+  - 근거: S2, S3
+  - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+  - 실행하면: 응답 헤더 Authorization에 Bearer eyJ...가 오고, jwt.io에 넣으면 id 1, username ssar, exp가 보인다
+  - Why: 서버가 세션을 기억하지 않아도 다음 요청에서 누구인지 알 수 있게 서명한 토큰을 준다
+  - 다른 장: project-setup, user-join
+- [ ] T3 빈 값 검사하기
+  - 근거: S5
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+  - 실행하면: 비밀번호를 비우면 400 비밀번호를 입력해주세요
+  - Why: 빈 값으로 DB를 찾기 전에 요청 단계에서 막는다
+  - 다른 장: user-join
+- [ ] T4 리액트에서 토큰 헤더 읽게 하기
+  - 근거: S6
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/resources/application.properties
+  - 실행하면: Origin http://localhost:5173으로 로그인하면 Access-Control-Expose-Headers: Authorization이 온다
+  - Why: 브라우저는 노출하지 않은 응답 헤더를 자바스크립트에 숨기므로 Authorization을 열어 줘야 리액트가 토큰을 꺼낸다
+  - 다른 장: project-setup, user-join
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
