@@ -7,7 +7,7 @@
   - 실행하면: 로그인 토큰을 담아 GET /api/users/me를 부르면 ssar 정보가 오고, 응답에 JSESSIONID가 없다
   - Why: 서버가 세션을 기억하지 않으므로 요청마다 토큰을 검사해 누구인지 알아낸다
   - 다른 장: user-login
-- [ ] T2 로그인이 필요한 주소 막기
+- [x] T2 로그인이 필요한 주소 막기
   - 근거: S2, S3, S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/RespFilter.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
   - 실행하면: 토큰 없이 /api/users/me는 401 로그인 후 이용해주세요. 글 목록과 /login은 그대로 열린다
