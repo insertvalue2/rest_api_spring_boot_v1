@@ -13,7 +13,7 @@
   - 실행하면: GET /api/admin/hello가 cos 토큰이면 환영 문구, ssar 토큰이면 403이다
   - Why: 로그인 여부가 아니라 역할로 주소를 막으려면 필터가 권한 목록을 넣고 규칙이 hasRole로 검사해야 한다
   - 다른 장: user-join, jwt-auth
-- [ ] T3 관리자가 글 지우기
+- [x] T3 관리자가 글 지우기
   - 근거: S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
   - 실행하면: cos 토큰으로 DELETE /api/admin/boards/1(ssar의 글)이 200이다
