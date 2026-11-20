@@ -18,9 +18,9 @@
 | 서버 | server-spring |
 
 ## 실행
-- 서버: cd server-spring, gradlew.bat bootRun (8080)
+- 서버: cd server-spring, .\gradlew.bat bootRun (8080)
 - 테스트: gradlew.bat test (루트. 8080이 비어 있어야 한다)
-- 빌드: gradlew.bat build
+- 빌드: .\gradlew.bat build
 
 ## 캡처
 | 종류 | 주소나 명령 |
