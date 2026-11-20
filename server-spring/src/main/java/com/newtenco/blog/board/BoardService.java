@@ -48,6 +48,16 @@ public class BoardService {
         return new BoardResponse.ListDTO(board);
     }
 
+    @Transactional
+    public void 글삭제(Integer id, Integer sessionUserId) {
+        Board board = boardRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));
+        if (!board.getUser().getId().equals(sessionUserId)) {
+            throw new ForbiddenException("게시글을 삭제할 권한이 없습니다");
+        }
+        boardRepository.delete(board);
+    }
+
     public BoardResponse.DetailDTO 글상세(Integer id) {
         Board board = boardRepository.findByIdJoinUser(id)
                 .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));

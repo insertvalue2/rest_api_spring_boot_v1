@@ -19,7 +19,7 @@
   - 실행하면: PUT /api/boards/1이 제목1 수정을 돌려주고, 상세도 바뀌어 있다
   - Why: 트랜잭션 안에서 엔티티 값만 바꾸면 JPA가 알아서 UPDATE를 보낸다
   - 다른 장: board-list, board-write
-- [ ] T4 글 삭제하기
+- [x] T4 글 삭제하기
   - 근거: S3, S4, S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: 새로 쓴 글을 DELETE한 뒤 그 글 상세가 404다

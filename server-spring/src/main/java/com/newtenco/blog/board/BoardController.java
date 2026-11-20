@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,12 @@ public class BoardController {
     public ResponseEntity<?> update(@AuthenticationPrincipal User sessionUser, @PathVariable("id") Integer id,
                                     @Valid @RequestBody BoardRequest.UpdateDTO reqDTO) {
         return Resp.ok(boardService.글수정(id, reqDTO, sessionUser.getId()));
+    }
+
+    @DeleteMapping("/api/boards/{id}")
+    public ResponseEntity<?> delete(@AuthenticationPrincipal User sessionUser, @PathVariable("id") Integer id) {
+        boardService.글삭제(id, sessionUser.getId());
+        return Resp.ok(null);
     }
 
     @GetMapping("/api/boards/{id}")
