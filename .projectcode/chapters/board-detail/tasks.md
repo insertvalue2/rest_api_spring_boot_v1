@@ -18,7 +18,7 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: GET /api/boards/abc가 status 500, msg 관리자에게 문의하세요로 온다. 없는 주소도 500이 된다
   - Why: 예상 못한 오류도 공통 모양으로 주고 내부 메시지는 숨긴다
-- [ ] T4 스프링이 아는 오류는 원래 상태 지키기
+- [x] T4 스프링이 아는 오류는 원래 상태 지키기
   - 근거: S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: 없는 주소가 다시 status 404로 오고, abc는 그대로 500이다
