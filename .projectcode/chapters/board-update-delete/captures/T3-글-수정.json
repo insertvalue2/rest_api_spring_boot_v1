@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/api/boards/1",
+    "body": {
+      "title": "제목1 수정",
+      "content": "내용1 수정"
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzEzLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.nQEZZ4lT0wkdmO70FT9yyl8czqK88BbazTCzgWub3aJOAKwy1lzOJCnZV34JxfbWL6uObmLW3xkUNZ4Bof64jA"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "title": "제목1 수정",
+      "content": "내용1 수정",
+      "username": "ssar",
+      "createdAt": "2026-11-20T10:51:53.172Z"
+    }
+  }
+}

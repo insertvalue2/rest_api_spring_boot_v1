@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/api/boards/4",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzM5LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.xZNVXQ-AarCq8F7KhQX8gIQoQimFh_KuswXuxrZa2Uv2wTJDCBuAg-552rxy-RJCBHrWJ6Z_Yt14O7X9rjxdmw"
+    }
+  },
+  "status": 403,
+  "contentType": "application/json",
+  "response": {
+    "status": 403,
+    "msg": "게시글을 삭제할 권한이 없습니다",
+    "body": null
+  }
+}

@@ -28,8 +28,8 @@
 | 6 | user-login | 로그인과 JWT 발급 | 기능 | JWT 만들기, 응답 헤더 Authorization, CORS 노출 헤더 | 완료 |
 | 7 | jwt-auth | JWT 인증 필터 | 기능 | 인증 필터, Stateless, URL 접근 규칙, 401 JSON, 내 정보 조회 | 완료 |
 | 8 | board-write | 글쓰기 | 기능 | 로그인 사용자 꺼내기, 저장 트랜잭션 | 완료 |
-| 9 | board-update-delete | 글 수정과 삭제 | 기능 | 작성자 검사 403, 변경 감지 | 마무리 중 |
-| 10 | reply | 댓글 | 기능 | Reply 엔티티, 댓글 쓰기와 삭제, 상세에 댓글 함께 주기 | 진행 중 |
+| 9 | board-update-delete | 글 수정과 삭제 | 기능 | 작성자 검사 403, 변경 감지 | 완료 |
+| 10 | reply | 댓글 | 기능 | Reply 엔티티, 댓글 쓰기와 삭제, 상세에 댓글 함께 주기 | 대기 |
 | 11 | board-owner | 내 글 내 댓글 표시 | 기능 | 선택 인증, owner 계산 | 대기 |
 | 12 | user-update | 내 정보 수정 | 기능 | 빈 비밀번호 유지, 조건부 검증 | 대기 |
 | 13 | admin-api | 관리자 API | 기능 | 역할, hasRole, 관리자 전용 주소 | 대기 |

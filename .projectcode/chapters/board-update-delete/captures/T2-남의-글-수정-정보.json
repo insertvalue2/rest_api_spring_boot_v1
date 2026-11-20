@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards/4/edit",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzAyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.oU4ljuQIJkv3_YpyUoYFIgZb7zYqvbdAV9QFqyW6awU-p4JufqEtTI7z1I9K3_ZkCI7pWcJoSK38TeqiRG0tNg"
+    }
+  },
+  "status": 403,
+  "contentType": "application/json",
+  "response": {
+    "status": 403,
+    "msg": "게시글에 접근할 권한이 없습니다",
+    "body": null
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "chapter": "board-update-delete",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-수정-정보.json",
+      "task": "T1",
+      "commit": "b2f0f4d",
+      "screen": "GET /api/boards/1/edit",
+      "see": "ssar 토큰으로 부르면 200과 제목1, 내용1이 온다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/1/edit",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4Mjg2LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.GNJqlu7N4nG0O4ErlbyvH_Tr8tv6OX37JsAzOlGe89RyLHPzo0KIpY4wxVGzhNUw_rTcbWZQaRtZvcrbmy_-AQ"
+        }
+      }
+    },
+    {
+      "file": "T2-남의-글-수정-정보.json",
+      "task": "T2",
+      "commit": "121259b",
+      "screen": "GET /api/boards/4/edit",
+      "see": "ssar 토큰으로 글 4를 부르면 403 게시글에 접근할 권한이 없습니다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/4/edit",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzAyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.oU4ljuQIJkv3_YpyUoYFIgZb7zYqvbdAV9QFqyW6awU-p4JufqEtTI7z1I9K3_ZkCI7pWcJoSK38TeqiRG0tNg"
+        }
+      }
+    },
+    {
+      "file": "T3-글-수정.json",
+      "task": "T3",
+      "commit": "29db1ad",
+      "screen": "PUT /api/boards/1",
+      "see": "ssar 토큰으로 고치면 200과 제목1 수정이 온다",
+      "request": {
+        "method": "PUT",
+        "path": "/api/boards/1",
+        "body": {
+          "title": "제목1 수정",
+          "content": "내용1 수정"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzEzLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.nQEZZ4lT0wkdmO70FT9yyl8czqK88BbazTCzgWub3aJOAKwy1lzOJCnZV34JxfbWL6uObmLW3xkUNZ4Bof64jA"
+        }
+      }
+    },
+    {
+      "file": "T4-글-삭제.json",
+      "task": "T4",
+      "commit": "77c0666",
+      "screen": "DELETE /api/boards/6",
+      "see": "새로 쓴 글 6을 지우면 200과 body null이 온다",
+      "request": {
+        "method": "DELETE",
+        "path": "/api/boards/6",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzYxLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.f-X8rLpP0x_lBE-cujsx8GuM-l-41JcvTLelYNysBDDMH5gU21ltIV2fpFySeaVoxmXr2rn6nit8gmA2jJDbjA"
+        }
+      }
+    },
+    {
+      "file": "done-남의-글-삭제.json",
+      "task": "done",
+      "commit": "77c0666",
+      "screen": "DELETE /api/boards/4",
+      "see": "ssar 토큰으로 글 4를 지우면 403 게시글을 삭제할 권한이 없습니다",
+      "request": {
+        "method": "DELETE",
+        "path": "/api/boards/4",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4MzM5LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.xZNVXQ-AarCq8F7KhQX8gIQoQimFh_KuswXuxrZa2Uv2wTJDCBuAg-552rxy-RJCBHrWJ6Z_Yt14O7X9rjxdmw"
+        }
+      }
+    }
+  ]
+}

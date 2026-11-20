@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards/1/edit",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4Mjg2LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.GNJqlu7N4nG0O4ErlbyvH_Tr8tv6OX37JsAzOlGe89RyLHPzo0KIpY4wxVGzhNUw_rTcbWZQaRtZvcrbmy_-AQ"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "title": "제목1",
+      "content": "내용1",
+      "username": "ssar",
+      "createdAt": "2026-11-20T10:51:26.062Z"
+    }
+  }
+}
