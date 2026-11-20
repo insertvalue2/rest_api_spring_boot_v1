@@ -1,0 +1,19 @@
+{
+  "chapter": "jwt-auth",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-내-정보.json", "task": "T1", "commit": "7e13dcb", "screen": "GET /api/users/me",
+      "see": "로그인 토큰을 담아 부르면 200과 ssar 정보가 오고 Set-Cookie가 없다",
+      "responseHeaders": ["Set-Cookie"],
+      "request": { "method": "GET", "path": "/api/users/me", "headers": { "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3NTU4LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.t49_OxGTWJ-vpj8U6zTzRam4AihnVsTVDITh2NzpLXjT6y6qpZkab6YhqN2GjgKqVmz61EV5hc7p5T4s2PG7Cw" } } },
+    { "file": "T2-토큰-없음.json", "task": "T2", "commit": "7b6f27d", "screen": "GET /api/users/me",
+      "see": "토큰 없이 부르면 401 로그인 후 이용해주세요",
+      "request": { "method": "GET", "path": "/api/users/me" } },
+    { "file": "T3-규칙-밖-주소.json", "task": "T3", "commit": "31d9d35", "screen": "GET /nothing",
+      "see": "토큰을 담아 부르면 403 권한이 없습니다",
+      "request": { "method": "GET", "path": "/nothing", "headers": { "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3NTU4LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.t49_OxGTWJ-vpj8U6zTzRam4AihnVsTVDITh2NzpLXjT6y6qpZkab6YhqN2GjgKqVmz61EV5hc7p5T4s2PG7Cw" } } },
+    { "file": "done-토큰-없음.json", "task": "done", "commit": "31d9d35", "screen": "GET /api/users/me",
+      "see": "토큰 없이 부르면 401 로그인 후 이용해주세요",
+      "request": { "method": "GET", "path": "/api/users/me" } }
+  ]
+}

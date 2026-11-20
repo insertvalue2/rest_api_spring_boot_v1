@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/users/me",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3NTE2LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.XReDetoKRDfmjYEpOwgz1YgCnvC_cGn8UcjGpFYv71z86FczKy6MkOXWdu-v3OIZVgYS9wRvp27VHsJEas9BWg"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "username": "ssar",
+      "email": "ssar@metacoding.com"
+    }
+  },
+  "headers": {
+    "Set-Cookie": null
+  }
+}

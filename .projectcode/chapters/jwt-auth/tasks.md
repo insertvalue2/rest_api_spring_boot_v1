@@ -24,6 +24,6 @@
   - 파일: tests/com/newtenco/blog/JwtAuthTest.java
   - 실행하면: 토큰 없이 /join과 OPTIONS 사전 요청이 200이고, 401 응답에도 JSESSIONID가 없다
   - Why: 테스트가 spec의 할 일을 모두 확인해야 장이 끝났다고 말할 수 있다
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식

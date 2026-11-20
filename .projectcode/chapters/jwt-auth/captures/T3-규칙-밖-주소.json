@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/nothing",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3NTU4LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.t49_OxGTWJ-vpj8U6zTzRam4AihnVsTVDITh2NzpLXjT6y6qpZkab6YhqN2GjgKqVmz61EV5hc7p5T4s2PG7Cw"
+    }
+  },
+  "status": 403,
+  "contentType": "application/json;charset=utf-8",
+  "response": {
+    "status": 403,
+    "msg": "권한이 없습니다",
+    "body": null
+  }
+}
