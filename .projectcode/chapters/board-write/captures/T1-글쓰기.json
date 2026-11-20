@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/boards",
+    "body": {
+      "title": "제목6",
+      "content": "내용6"
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3ODk0LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.GmCZLyjp_5L6T2ZgjrXP_W7WEzhynQbKtgEv_f5V_Hg3Kkqnlk4zYFsPOTBQWQ_43-iesNAadpEnfFuAjZEj8g"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 6,
+      "title": "제목6",
+      "content": "내용6",
+      "username": "ssar",
+      "createdAt": "2026-11-20T10:44:54.341Z"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "chapter": "board-write",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-글쓰기.json",
+      "task": "T1",
+      "commit": "2c5ba56",
+      "screen": "POST /api/boards",
+      "see": "토큰을 담아 부르면 200과 id 6, username ssar인 글이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/api/boards",
+        "body": {
+          "title": "제목6",
+          "content": "내용6"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3ODk0LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.GmCZLyjp_5L6T2ZgjrXP_W7WEzhynQbKtgEv_f5V_Hg3Kkqnlk4zYFsPOTBQWQ_43-iesNAadpEnfFuAjZEj8g"
+        }
+      }
+    },
+    {
+      "file": "T2-제목-비움.json",
+      "task": "T2",
+      "commit": "3e747f9",
+      "screen": "POST /api/boards",
+      "see": "제목을 비우면 400 제목을 입력해주세요",
+      "request": {
+        "method": "POST",
+        "path": "/api/boards",
+        "body": {
+          "title": "",
+          "content": "내용6"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3OTE2LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.RJZVUVKlOM4xNwzUy1iX7IL4NonVcOhGv_bZw6sHpTRNyeJul213JMApIVVFykAsjLVESdmgFhNzkqWiAFXJMw"
+        }
+      }
+    },
+    {
+      "file": "done-글쓰기.json",
+      "task": "done",
+      "commit": "3e747f9",
+      "screen": "POST /api/boards",
+      "see": "토큰을 담아 부르면 200과 id 6, username ssar인 글이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/api/boards",
+        "body": {
+          "title": "제목6",
+          "content": "내용6"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3OTM0LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.K1VKQ3KG0Izp0Wb_Dot8Ka6TQLG6-9iArrTVrvYENS13A7zuls3x9AMFMrjcF6glByFwAyWK1C0Wbu5xZ2iJjw"
+        }
+      }
+    }
+  ]
+}

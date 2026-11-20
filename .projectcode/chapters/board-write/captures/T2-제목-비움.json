@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/boards",
+    "body": {
+      "title": "",
+      "content": "내용6"
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3OTE2LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.RJZVUVKlOM4xNwzUy1iX7IL4NonVcOhGv_bZw6sHpTRNyeJul213JMApIVVFykAsjLVESdmgFhNzkqWiAFXJMw"
+    }
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "제목을 입력해주세요",
+    "body": null
+  }
+}
