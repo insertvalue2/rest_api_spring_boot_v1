@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: user-join 장 끝
+기준: user-login 장 끝
 
 ```
 gradle/
@@ -27,24 +27,26 @@ server-spring/
               core/
                 handler/
                   errors/
-                    BadRequestException.java   새로
+                    BadRequestException.java
                     NotFoundException.java
+                    UnauthorizedException.java   새로
                   GlobalExceptionHandler.java   고침
                 util/
+                  JwtUtil.java   새로
                   Resp.java
-                SecurityConfig.java   새로
+                SecurityConfig.java   고침
               user/
-                User.java   고침
-                UserController.java   새로
-                UserRepository.java   새로
-                UserRequest.java   새로
-                UserResponse.java   새로
-                UserService.java   새로
+                User.java
+                UserController.java   고침
+                UserRepository.java   고침
+                UserRequest.java   고침
+                UserResponse.java   고침
+                UserService.java   고침
               BlogApplication.java
       resources/
         db/
           data.sql
-        application.properties
+        application.properties   고침
   .gitignore
   build.gradle   고침
   gradlew

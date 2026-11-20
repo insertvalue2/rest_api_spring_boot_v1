@@ -110,3 +110,31 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/user/UserService.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java
+
+## 로그인
+
+```mermaid
+flowchart LR
+  A[POST /login] --> B[UserController]
+  B --> C[UserService]
+  C --> D[UserRepository]
+  D --> E[(user_tb)]
+  C --> F[PasswordEncoder]
+  C --> G[JwtUtil]
+  C --> H[UnauthorizedException]
+  H --> I[GlobalExceptionHandler]
+  B --> J[Authorization 헤더]
+```
+
+만든 장: user-login
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java
+- server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/errors/UnauthorizedException.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+- server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+- server-spring/src/main/resources/application.properties

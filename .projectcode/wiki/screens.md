@@ -26,3 +26,8 @@
 처음 나온 장: user-join
 장 끝 사진: chapters/user-join/captures/T5-중복-확인.json
 보이는 것: ssar은 available false
+
+## POST /login
+처음 나온 장: user-login
+장 끝 사진: chapters/user-login/captures/done-로그인.json
+보이는 것: Origin 5173으로 로그인하면 200, Authorization Bearer 토큰, Access-Control-Expose-Headers Authorization

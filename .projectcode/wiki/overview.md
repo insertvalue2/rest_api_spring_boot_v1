@@ -10,8 +10,8 @@
 | 3 | board-detail 글 상세 | 기능 | 사용자 예외, 전역 예외 처리 404 | 완료 | 4 | 5 |
 | 4 | board-paging 목록 쪽 나누기와 검색 | 기능 | Pageable, Page, 제목 검색 쿼리 | 완료 | 3 | 4 |
 | 5 | user-join 회원가입 | 기능 | Bean Validation, Security 기본 설정, BCrypt, 아이디 중복 확인 | 완료 | 6 | 7 |
-| 6 | user-login 로그인과 JWT 발급 | 기능 | JWT 만들기, 응답 헤더 Authorization, CORS 노출 헤더 | 진행 중 | 4 | 0 |
-| 7 | jwt-auth JWT 인증 필터 | 기능 | 인증 필터, Stateless, URL 접근 규칙, 401 JSON, 내 정보 조회 | 대기 | 0 | 0 |
+| 6 | user-login 로그인과 JWT 발급 | 기능 | JWT 만들기, 응답 헤더 Authorization, CORS 노출 헤더 | 완료 | 4 | 5 |
+| 7 | jwt-auth JWT 인증 필터 | 기능 | 인증 필터, Stateless, URL 접근 규칙, 401 JSON, 내 정보 조회 | 진행 중 | 3 | 0 |
 | 8 | board-write 글쓰기 | 기능 | 로그인 사용자 꺼내기, 저장 트랜잭션 | 대기 | 0 | 0 |
 | 9 | board-update-delete 글 수정과 삭제 | 기능 | 작성자 검사 403, 변경 감지 | 대기 | 0 | 0 |
 | 10 | reply 댓글 | 기능 | Reply 엔티티, 댓글 쓰기와 삭제, 상세에 댓글 함께 주기 | 대기 | 0 | 0 |
@@ -30,3 +30,4 @@
 - 서버 확인용 주소
 - 한 쪽 글 수 바꾸기(size)
 - 내용이나 작성자로 검색
+- 만료와 위조를 다른 문구로 구분하기
