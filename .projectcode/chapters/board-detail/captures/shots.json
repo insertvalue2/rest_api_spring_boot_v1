@@ -1,0 +1,21 @@
+{
+  "chapter": "board-detail",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-글-상세.json", "task": "T1", "commit": "8b2a572", "screen": "GET /api/boards/4",
+      "see": "글 4가 작성자 번호 2, 아이디 cos와 함께 온다",
+      "request": { "method": "GET", "path": "/api/boards/4" } },
+    { "file": "T2-없는-글-404.json", "task": "T2", "commit": "6c6d77d", "screen": "GET /api/boards/99",
+      "see": "status 404, msg 게시글을 찾을 수 없습니다, body null로 온다",
+      "request": { "method": "GET", "path": "/api/boards/99" } },
+    { "file": "T3-처리못한-오류-500.json", "task": "T3", "commit": "d806b29", "screen": "GET /api/boards/abc",
+      "see": "status 500, msg 관리자에게 문의하세요로 온다",
+      "request": { "method": "GET", "path": "/api/boards/abc" } },
+    { "file": "T4-없는-주소-404.json", "task": "T4", "commit": "ac823a9", "screen": "GET /api/nothing-here",
+      "see": "없는 주소가 status 404로 온다",
+      "request": { "method": "GET", "path": "/api/nothing-here" } },
+    { "file": "done-없는-글-404.json", "task": "done", "commit": "ac823a9", "screen": "GET /api/boards/99",
+      "see": "status 404, msg 게시글을 찾을 수 없습니다, body null인 공통 실패 응답이 온다",
+      "request": { "method": "GET", "path": "/api/boards/99" } }
+  ]
+}

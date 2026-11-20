@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards/abc"
+  },
+  "status": 500,
+  "contentType": "application/json",
+  "response": {
+    "status": 500,
+    "msg": "관리자에게 문의하세요",
+    "body": null
+  }
+}

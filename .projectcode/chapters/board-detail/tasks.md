@@ -23,6 +23,6 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: 없는 주소가 다시 status 404로 오고, abc는 그대로 500이다
   - Why: 모든 예외를 500으로 바꾸면 없는 주소 같은 흔한 실패까지 서버 고장처럼 보인다
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식

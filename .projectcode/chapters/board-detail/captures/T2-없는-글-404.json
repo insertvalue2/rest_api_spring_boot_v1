@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards/99"
+  },
+  "status": 404,
+  "contentType": "application/json",
+  "response": {
+    "status": 404,
+    "msg": "게시글을 찾을 수 없습니다",
+    "body": null
+  }
+}
