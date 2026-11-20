@@ -13,7 +13,7 @@
   - 실행하면: 토큰 없이 /api/users/me는 401 로그인 후 이용해주세요. 글 목록과 /login은 그대로 열린다
   - Why: 누구인지 알아낸 다음에는 주소마다 로그인이 필요한지 정해 막아야 한다
   - 다른 장: user-login
-- [ ] T3 규칙에 없는 주소 막기
+- [x] T3 규칙에 없는 주소 막기
   - 근거: S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/RespFilter.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
   - 실행하면: 토큰을 담아 GET /nothing을 부르면 403 권한이 없습니다
