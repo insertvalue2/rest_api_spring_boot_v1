@@ -161,3 +161,23 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserController.java
 - server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+
+## 글쓰기
+
+```mermaid
+flowchart LR
+  A[POST /api/boards] --> B[JwtAuthorizationFilter]
+  B --> C[BoardController]
+  C --> D[BoardRequest.SaveDTO]
+  C --> E[BoardService]
+  E --> F[BoardRepository]
+  F --> G[(board_tb)]
+  E --> H[BoardResponse.ListDTO]
+```
+
+만든 장: board-write
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+- server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java
+- server-spring/src/main/java/com/newtenco/blog/board/Board.java

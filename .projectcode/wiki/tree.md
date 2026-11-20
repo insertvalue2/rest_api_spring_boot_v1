@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: jwt-auth 장 끝
+기준: board-write 장 끝
 
 ```
 gradle/
@@ -19,14 +19,15 @@ server-spring/
           newtenco/
             blog/
               board/
-                Board.java
-                BoardController.java
+                Board.java   고침
+                BoardController.java   고침
                 BoardRepository.java
+                BoardRequest.java   새로
                 BoardResponse.java
-                BoardService.java
+                BoardService.java   고침
               core/
                 filter/
-                  JwtAuthorizationFilter.java   새로
+                  JwtAuthorizationFilter.java
                 handler/
                   errors/
                     BadRequestException.java
@@ -34,17 +35,17 @@ server-spring/
                     UnauthorizedException.java
                   GlobalExceptionHandler.java
                 util/
-                  JwtUtil.java   고침
+                  JwtUtil.java
                   Resp.java
-                  RespFilter.java   새로
-                SecurityConfig.java   고침
+                  RespFilter.java
+                SecurityConfig.java
               user/
                 User.java
-                UserController.java   고침
+                UserController.java
                 UserRepository.java
                 UserRequest.java
                 UserResponse.java
-                UserService.java   고침
+                UserService.java
               BlogApplication.java
       resources/
         db/

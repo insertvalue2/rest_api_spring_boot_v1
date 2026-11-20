@@ -36,3 +36,8 @@
 처음 나온 장: jwt-auth
 장 끝 사진: chapters/jwt-auth/captures/done-토큰-없음.json
 보이는 것: 토큰 없이 부르면 401 로그인 후 이용해주세요
+
+## POST /api/boards
+처음 나온 장: board-write
+장 끝 사진: chapters/board-write/captures/done-글쓰기.json
+보이는 것: 토큰을 담아 부르면 200과 id 6, username ssar인 글
