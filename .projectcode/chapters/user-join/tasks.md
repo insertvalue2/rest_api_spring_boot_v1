@@ -1,0 +1,41 @@
+# user-join 작업
+
+- [ ] 테스트 작성
+- [ ] T1 Security 넣고 모든 주소 열기
+  - 근거: S1
+  - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+  - 실행하면: 스타터만 넣으면 /api/boards가 401로 잠기고, SecurityConfig를 넣으면 GET /api/boards가 다시 200이다
+  - Why: Security는 넣는 순간 모든 주소를 잠그므로, 로그인을 만들기 전까지 쓰지 않는 기능을 끄고 주소를 열어 둔다
+  - 다른 장: project-setup
+- [ ] T2 회원가입 API 만들기
+  - 근거: S2, S3
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+  - 실행하면: POST /join이 id 3, love, 이메일을 주고, H2 콘솔의 password는 $2a$로 시작한다
+  - Why: 비밀번호는 원문으로 저장하면 안 되므로 저장 전에 BCrypt로 바꾼다
+  - 다른 장: board-list
+- [ ] T3 입력 검사하기
+  - 근거: S4
+  - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+  - 실행하면: 비밀번호 12로 가입하면 400 비밀번호는 4~20자여야 합니다
+  - Why: 잘못된 값이 DB까지 가기 전에 요청 단계에서 막는다
+  - 다른 장: project-setup, board-detail
+- [ ] T4 같은 아이디 막기
+  - 근거: S5
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/BadRequestException.java, server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+  - 실행하면: ssar로 가입하면 400 이미 존재하는 유저네임입니다
+  - Why: unique 제약에 걸려 500이 나기 전에 사람이 읽을 이유로 알려 준다
+  - 다른 장: board-detail
+- [ ] T5 아이디 중복 확인 API
+  - 근거: S6
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+  - 실행하면: ?username=ssar은 available false, ?username=love는 true
+  - Why: 가입 버튼을 누르기 전에 아이디를 쓸 수 있는지 미리 알려 준다
+- [ ] T6 요청 값이 빠지면 400으로 알리기
+  - 근거: S7
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+  - 실행하면: /check-username만 부르면 400 username:값을 입력해주세요
+  - Why: 스프링 기본 영어 문구 대신 어떤 값이 빠졌는지 알려 준다
+  - 다른 장: board-detail
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
