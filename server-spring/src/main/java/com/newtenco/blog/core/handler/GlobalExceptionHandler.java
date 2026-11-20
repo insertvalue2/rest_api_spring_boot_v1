@@ -2,6 +2,7 @@ package com.newtenco.blog.core.handler;
 
 import com.newtenco.blog.core.handler.errors.BadRequestException;
 import com.newtenco.blog.core.handler.errors.NotFoundException;
+import com.newtenco.blog.core.handler.errors.UnauthorizedException;
 import com.newtenco.blog.core.util.Resp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<?> ex400(BadRequestException e) {
         return Resp.fail(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<?> ex401(UnauthorizedException e) {
+        return Resp.fail(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
 
     @ExceptionHandler(NotFoundException.class)

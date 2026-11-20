@@ -21,6 +21,11 @@ public class UserController {
         return Resp.ok(userService.회원가입(reqDTO));
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserRequest.LoginDTO reqDTO) {
+        return Resp.ok(userService.로그인(reqDTO));
+    }
+
     @GetMapping("/check-username")
     public ResponseEntity<?> checkUsername(@RequestParam("username") String username) {
         return Resp.ok(userService.유저네임중복체크(username));

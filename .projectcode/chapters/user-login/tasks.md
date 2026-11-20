@@ -1,7 +1,7 @@
 # user-login 작업
 
 - [x] 테스트 작성
-- [ ] T1 로그인 API 만들기
+- [x] T1 로그인 API 만들기
   - 근거: S1, S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/handler/errors/UnauthorizedException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: ssar/1234는 200과 회원 정보, 비밀번호 틀림은 401 유저네임 혹은 비밀번호가 일치하지 않습니다
