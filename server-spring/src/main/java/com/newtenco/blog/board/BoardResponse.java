@@ -32,13 +32,14 @@ public class BoardResponse {
         public DetailDTO(Board board, Integer sessionUserId) {
             this(board.getId(), board.getTitle(), board.getContent(), board.getUser().getId(), board.getUser().getUsername(),
                     board.getUser().getId().equals(sessionUserId),
-                    board.getReplies().stream().map(ReplyDTO::new).toList());
+                    board.getReplies().stream().map(reply -> new ReplyDTO(reply, sessionUserId)).toList());
         }
 
-        public record ReplyDTO(Integer id, String comment, Integer userId, String username) {
+        public record ReplyDTO(Integer id, String comment, Integer userId, String username, boolean owner) {
 
-            public ReplyDTO(Reply reply) {
-                this(reply.getId(), reply.getComment(), reply.getUser().getId(), reply.getUser().getUsername());
+            public ReplyDTO(Reply reply, Integer sessionUserId) {
+                this(reply.getId(), reply.getComment(), reply.getUser().getId(), reply.getUser().getUsername(),
+                        reply.getUser().getId().equals(sessionUserId));
             }
         }
     }

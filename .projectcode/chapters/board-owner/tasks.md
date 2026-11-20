@@ -7,7 +7,7 @@
   - 실행하면: ssar 토큰으로 GET /api/boards/1이 owner true, 토큰 없이는 false
   - Why: 누구나 보는 주소라도 토큰이 있으면 누구인지 알아내 화면이 수정과 삭제 버튼을 보일지 정하게 한다
   - 다른 장: board-list
-- [ ] T2 내 댓글 표시하기
+- [x] T2 내 댓글 표시하기
   - 근거: S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java
   - 실행하면: ssar 토큰으로 GET /api/boards/5가 글 owner false, 댓글4, 5 owner true
