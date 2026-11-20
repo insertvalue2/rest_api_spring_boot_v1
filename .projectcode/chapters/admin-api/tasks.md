@@ -7,7 +7,7 @@
   - 실행하면: cos로 로그인한 토큰을 jwt.io에서 보면 roles가 USER, ADMIN이다
   - Why: 누가 관리자인지 알려면 회원마다 역할을 저장하고 토큰에도 담아야 한다
   - 다른 장: user-join, board-list, user-login
-- [ ] T2 관리자 전용 주소 막기
+- [x] T2 관리자 전용 주소 막기
   - 근거: S3, S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
   - 실행하면: GET /api/admin/hello가 cos 토큰이면 환영 문구, ssar 토큰이면 403이다

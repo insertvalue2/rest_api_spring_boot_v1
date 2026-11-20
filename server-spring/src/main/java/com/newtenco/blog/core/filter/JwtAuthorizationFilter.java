@@ -13,7 +13,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-import java.util.List;
 
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
@@ -26,7 +25,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
         if (header != null && header.startsWith(JwtUtil.TOKEN_PREFIX)) {
             try {
                 User user = JwtUtil.verify(header.substring(JwtUtil.TOKEN_PREFIX.length()));
-                Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, List.of());
+                Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             } catch (JWTVerificationException e) {
             }

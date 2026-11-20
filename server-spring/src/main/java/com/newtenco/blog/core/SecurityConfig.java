@@ -64,9 +64,10 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers("/join", "/login", "/check-username").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
+                .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.GET, "/api/boards/*/edit").authenticated()
                 .requestMatchers(HttpMethod.GET, "/api/boards/**").permitAll()
-                .requestMatchers("/api/**").authenticated()
+                .requestMatchers("/api/**").hasAnyRole("USER", "ADMIN")
                 .anyRequest().denyAll()
         );
 

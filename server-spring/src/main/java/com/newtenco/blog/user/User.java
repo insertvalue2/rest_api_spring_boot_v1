@@ -14,6 +14,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -56,6 +57,12 @@ public class User {
             this.roles = roles;
         }
         this.createdAt = createdAt;
+    }
+
+    public List<SimpleGrantedAuthority> getAuthorities() {
+        return roles.stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                .toList();
     }
 
     public void update(String email, String password) {
