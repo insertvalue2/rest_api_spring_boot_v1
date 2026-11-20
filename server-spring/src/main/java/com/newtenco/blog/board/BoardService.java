@@ -2,6 +2,9 @@ package com.newtenco.blog.board;
 
 import com.newtenco.blog.core.handler.errors.NotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,8 +17,9 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public List<BoardResponse.ListDTO> 글목록() {
-        return boardRepository.findAllJoinUser().stream()
+    public List<BoardResponse.ListDTO> 글목록(Integer page) {
+        Pageable pageable = PageRequest.of(page, 3, Sort.by(Sort.Direction.DESC, "id"));
+        return boardRepository.findAllJoinUser(pageable).getContent().stream()
                 .map(BoardResponse.ListDTO::new)
                 .toList();
     }

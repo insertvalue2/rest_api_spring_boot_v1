@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
@@ -14,8 +15,8 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping("/api/boards")
-    public ResponseEntity<?> list() {
-        return Resp.ok(boardService.글목록());
+    public ResponseEntity<?> list(@RequestParam(value = "page", defaultValue = "0") Integer page) {
+        return Resp.ok(boardService.글목록(page));
     }
 
     @GetMapping("/api/boards/{id}")

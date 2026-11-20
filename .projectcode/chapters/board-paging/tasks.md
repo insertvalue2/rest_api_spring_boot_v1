@@ -1,7 +1,7 @@
 # board-paging 작업
 
 - [x] 테스트 작성
-- [ ] T1 목록을 3개씩 나누기
+- [x] T1 목록을 3개씩 나누기
   - 근거: S1, S2
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: GET /api/boards가 글 5, 4, 3만 주고, ?page=1은 글 2, 1을 준다. body는 아직 배열이다
