@@ -1,0 +1,27 @@
+# board-list 작업
+
+- [ ] 테스트 작성
+- [ ] T1 회원과 글 엔티티 만들기
+  - 근거: S1
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/board/Board.java
+  - 실행하면: 로그에 create table user_tb, board_tb와 user_id 외래키가 찍히고, H2 콘솔에 두 테이블이 보인다
+  - Why: 데이터를 넣고 꺼내려면 먼저 테이블이 될 엔티티가 있어야 한다
+- [ ] T2 샘플 데이터 넣기
+  - 근거: S1
+  - 파일: server-spring/src/main/resources/db/data.sql, server-spring/src/main/resources/application.properties
+  - 실행하면: H2 콘솔에서 select하면 회원 2명, 글 5개가 나온다
+  - Why: 목록 API를 만들기 전에 보여줄 글이 DB에 있어야 한다
+  - 다른 장: project-setup
+- [ ] T3 글 목록 API 만들기
+  - 근거: S2, S3
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: GET /api/boards가 글 5개를 id 5부터 작성자 아이디와 함께 JSON 배열로 준다
+  - Why: 글과 작성자를 한 번에 꺼내 응답 DTO로 바꿔야 password 없이 필요한 칸만 내보낸다
+- [ ] T4 공통 응답으로 감싸기
+  - 근거: S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: 같은 목록이 status 200, msg 성공, body 배열 안에 담겨 온다
+  - Why: 모든 API가 같은 모양으로 응답해야 리액트가 한 가지 방법으로 읽는다
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
