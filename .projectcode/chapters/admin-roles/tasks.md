@@ -1,6 +1,6 @@
 # admin-roles 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 회원 역할 바꾸기
   - 근거: S1, S2, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
