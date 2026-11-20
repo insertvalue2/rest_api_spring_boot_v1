@@ -6,7 +6,7 @@
   - 파일: server-spring/settings.gradle, server-spring/build.gradle, server-spring/gradlew, server-spring/gradlew.bat, server-spring/gradle/wrapper, server-spring/.gitignore, server-spring/src/main/java/com/newtenco/blog/BlogApplication.java, server-spring/src/main/resources/application.properties
   - 실행하면: bootRun 로그에 Tomcat started on port 8080이 찍히고, 브라우저 localhost:8080은 404 Whitelabel 화면이다
   - Why: 서버가 떠야 다음 단계에서 DB와 테스트를 붙일 수 있다
-- [ ] T2 루트에서 테스트 돌리기
+- [x] T2 루트에서 테스트 돌리기
   - 근거: S4
   - 파일: settings.gradle, gradlew, gradlew.bat, gradle/wrapper, .gitignore, tests/build.gradle
   - 실행하면: 루트 gradlew.bat test가 tests를 돌린다. S1은 통과하고 S2, S3는 아직 실패한다

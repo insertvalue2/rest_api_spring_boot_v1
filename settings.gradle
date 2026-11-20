@@ -1,0 +1,4 @@
+rootProject.name = 'spring-follow'
+
+includeBuild('server-spring')
+include('tests')
