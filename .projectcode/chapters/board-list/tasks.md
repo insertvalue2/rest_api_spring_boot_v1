@@ -6,7 +6,7 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/board/Board.java
   - 실행하면: 로그에 create table user_tb, board_tb와 user_id 외래키가 찍히고, H2 콘솔에 두 테이블이 보인다
   - Why: 데이터를 넣고 꺼내려면 먼저 테이블이 될 엔티티가 있어야 한다
-- [ ] T2 샘플 데이터 넣기
+- [x] T2 샘플 데이터 넣기
   - 근거: S1
   - 파일: server-spring/src/main/resources/db/data.sql, server-spring/src/main/resources/application.properties
   - 실행하면: H2 콘솔에서 select하면 회원 2명, 글 5개가 나온다
