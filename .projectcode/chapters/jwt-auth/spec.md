@@ -7,7 +7,7 @@
 - S1 GET /api/users/me에 로그인 토큰(Authorization: Bearer ...)을 담아 보내면 내 정보(id, username, email)를 돌려준다
 - S2 토큰 없이 /api/** 로그인 필요 주소를 부르면 401과 "로그인 후 이용해주세요"를 공통 응답 모양으로 돌려준다
 - S3 위조되었거나 만료된 토큰도 401과 같은 문구를 돌려준다
-- S4 글 목록, 글 상세, /join, /login, /check-username, H2 콘솔은 토큰 없이 그대로 열린다
+- S4 글 목록, 글 상세, /join, /login, /check-username, H2 콘솔, 브라우저의 사전 요청(OPTIONS)은 토큰 없이 그대로 열린다
 - S5 규칙에 없는 주소는 로그인해도 403과 "권한이 없습니다"를 돌려준다
 - S6 서버는 로그인 상태를 세션에 저장하지 않는다 (응답에 JSESSIONID 쿠키가 없다)
 

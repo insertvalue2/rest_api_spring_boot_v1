@@ -73,10 +73,10 @@ http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationP
 ## 테스트 확인 방법
 - S1 로그인 토큰으로 GET /api/users/me가 200, body에 id 1, ssar, email
 - S2 토큰 없이 /api/users/me가 401 로그인 후 이용해주세요, body null
-- S3 서명을 바꾼 토큰과 엉터리 토큰이 401 같은 문구
-- S4 토큰 없이 글 목록, 글 상세, /check-username, /h2-console이 200
+- S3 서명을 바꾼 토큰과 엉터리 토큰이 401 같은 문구. 만료 토큰은 비밀키가 학생 코드 안에 있어 테스트에서 만들 수 없다. 만료도 위조와 같은 JWTVerificationException으로 잡히므로 위조 토큰으로 대신한다
+- S4 토큰 없이 글 목록, 글 상세, /join, /check-username, /h2-console이 200, Origin을 담은 OPTIONS 사전 요청이 200
 - S5 토큰을 담아 GET /nothing이 403 권한이 없습니다
-- S6 응답 Set-Cookie에 JSESSIONID가 없다
+- S6 토큰 없이 401이 난 응답과 로그인한 응답 모두 Set-Cookie에 JSESSIONID가 없다
 - 앞 장 BoardDetailTest S4는 토큰을 담아 보낸다 (Touches: board-detail)
 
 ## 라이브러리
