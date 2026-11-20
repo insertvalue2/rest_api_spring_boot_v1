@@ -19,7 +19,7 @@
   - 실행하면: 비밀번호를 비우면 400 비밀번호를 입력해주세요
   - Why: 빈 값으로 DB를 찾기 전에 요청 단계에서 막는다
   - 다른 장: user-join
-- [ ] T4 리액트에서 토큰 헤더 읽게 하기
+- [x] T4 리액트에서 토큰 헤더 읽게 하기
   - 근거: S6
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/resources/application.properties
   - 실행하면: Origin http://localhost:5173으로 로그인하면 Access-Control-Expose-Headers: Authorization이 온다
