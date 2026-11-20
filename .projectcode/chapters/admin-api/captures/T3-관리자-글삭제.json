@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/api/admin/boards/1",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA1MDYsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.dKaLWas74iCvlgkkEUGmEqEM81s3okI7gwiDglmpYu30pTAtiu-ck3-7h0x9i5OB2BcBJDkyGKr70hxsCK1yYw"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/admin/hello",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA0ODMsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.EWI0NZWIIpcwz7UEWFzoRFfZ3Dd-dKEoDzxDDOHpWs5SNFx8ltVJT8kS5SP5ZLRhj746niDV9wmwDpGDf-VZEw"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": "관리자 cos님 환영합니다"
+  }
+}

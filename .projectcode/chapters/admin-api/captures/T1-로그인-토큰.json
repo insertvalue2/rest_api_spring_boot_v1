@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/login",
+    "body": {
+      "username": "cos",
+      "password": "1234"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 2,
+      "username": "cos",
+      "email": "cos@metacoding.com"
+    }
+  },
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA0NTksImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.wmKoeIpRULAgcxixrcNkQneJjHgYrj31rRt75XqTPaQZbT_chGNBSHNRB4KuPl5k4Xxy6kCplrk9NBRDzCubqg"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "chapter": "admin-api",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-로그인-토큰.json",
+      "task": "T1",
+      "commit": "44b26ef",
+      "screen": "POST /login",
+      "see": "cos로 로그인하면 200과 Authorization 헤더에 Bearer 토큰이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/login",
+        "body": {
+          "username": "cos",
+          "password": "1234"
+        }
+      },
+      "responseHeaders": [
+        "Authorization"
+      ]
+    },
+    {
+      "file": "T2-관리자-환영.json",
+      "task": "T2",
+      "commit": "ee4d3b2",
+      "screen": "GET /api/admin/hello",
+      "see": "cos 토큰으로 부르면 200과 관리자 cos님 환영합니다가 온다",
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/hello",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA0ODMsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.EWI0NZWIIpcwz7UEWFzoRFfZ3Dd-dKEoDzxDDOHpWs5SNFx8ltVJT8kS5SP5ZLRhj746niDV9wmwDpGDf-VZEw"
+        }
+      }
+    },
+    {
+      "file": "T3-관리자-글삭제.json",
+      "task": "T3",
+      "commit": "1acf4ef",
+      "screen": "DELETE /api/admin/boards/1",
+      "see": "cos 토큰으로 ssar의 글 1을 지우면 200이 온다",
+      "request": {
+        "method": "DELETE",
+        "path": "/api/admin/boards/1",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNjA1MDYsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.dKaLWas74iCvlgkkEUGmEqEM81s3okI7gwiDglmpYu30pTAtiu-ck3-7h0x9i5OB2BcBJDkyGKr70hxsCK1yYw"
+        }
+      }
+    },
+    {
+      "file": "done-관리자-권한.json",
+      "task": "done",
+      "commit": "1acf4ef",
+      "screen": "GET /api/admin/hello",
+      "see": "ssar 토큰으로 부르면 403과 권한이 없습니다가 온다",
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/hello",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjYwNTI4LCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIiwicm9sZXMiOlsiVVNFUiJdfQ.RjnKa1EKhIJYqwgHUDkFLipR8HwjD58OUOlgL6qXBQA3KQcWhvWGucJ0oLRbalNuJ2MYippAAKWbDojH0UMiRw"
+        }
+      }
+    }
+  ]
+}
