@@ -10,4 +10,11 @@ public class BoardResponse {
             this(board.getId(), board.getTitle(), board.getContent(), board.getUser().getUsername(), board.getCreatedAt());
         }
     }
+
+    public record DetailDTO(Integer id, String title, String content, Integer userId, String username) {
+
+        public DetailDTO(Board board) {
+            this(board.getId(), board.getTitle(), board.getContent(), board.getUser().getId(), board.getUser().getUsername());
+        }
+    }
 }

@@ -18,4 +18,9 @@ public class BoardService {
                 .map(BoardResponse.ListDTO::new)
                 .toList();
     }
+
+    public BoardResponse.DetailDTO 글상세(Integer id) {
+        Board board = boardRepository.findByIdJoinUser(id).orElseThrow();
+        return new BoardResponse.DetailDTO(board);
+    }
 }

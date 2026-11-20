@@ -1,7 +1,7 @@
 # board-detail 작업
 
 - [x] 테스트 작성
-- [ ] T1 글 상세 API 만들기
+- [x] T1 글 상세 API 만들기
   - 근거: S1
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: GET /api/boards/4가 글 4를 작성자 번호 2, 아이디 cos와 함께 준다. 없는 글 99는 아직 스프링 기본 500이다
