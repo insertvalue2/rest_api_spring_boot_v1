@@ -7,7 +7,7 @@
   - 실행하면: GET /api/boards/4가 글 4를 작성자 번호 2, 아이디 cos와 함께 준다. 없는 글 99는 아직 스프링 기본 500이다
   - Why: 글 하나를 꺼내는 길이 있어야 없는 글을 어떻게 알릴지 다룰 수 있다
   - 다른 장: board-list
-- [ ] T2 없는 글은 404로 알려주기
+- [x] T2 없는 글은 404로 알려주기
   - 근거: S2
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/NotFoundException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java, server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
   - 실행하면: GET /api/boards/99가 status 404, msg 게시글을 찾을 수 없습니다, body null로 온다
