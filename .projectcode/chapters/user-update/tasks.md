@@ -13,7 +13,7 @@
   - 실행하면: {ssar@nate.com, 5678}로 바꾸면 5678로 로그인되고 1234는 401이다
   - Why: 비밀번호에 글자가 있을 때만 암호화해서 바꾼다
   - 다른 장: user-join
-- [ ] T3 입력 검사하기
+- [x] T3 입력 검사하기
   - 근거: S4, S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: 비밀번호 12는 400 비밀번호는 4~20자여야 합니다, 빈 비밀번호는 통과한다

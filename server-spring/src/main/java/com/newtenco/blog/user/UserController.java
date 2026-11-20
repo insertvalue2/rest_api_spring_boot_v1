@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @PutMapping("/api/users/me")
-    public ResponseEntity<?> update(@AuthenticationPrincipal User sessionUser, @RequestBody UserRequest.UpdateDTO reqDTO) {
+    public ResponseEntity<?> update(@AuthenticationPrincipal User sessionUser, @Valid @RequestBody UserRequest.UpdateDTO reqDTO) {
         return Resp.ok(userService.회원수정(reqDTO, sessionUser.getId()));
     }
 

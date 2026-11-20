@@ -2,6 +2,7 @@ package com.newtenco.blog.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class UserRequest {
@@ -36,7 +37,13 @@ public class UserRequest {
             String password) {
     }
 
-    public record UpdateDTO(String email, String password) {
+    public record UpdateDTO(
+            @NotBlank(message = "이메일을 입력해주세요")
+            @Email(message = "이메일 형식이 올바르지 않습니다")
+            String email,
+
+            @Pattern(regexp = "^$|^.{4,20}$", message = "비밀번호는 4~20자여야 합니다")
+            String password) {
 
         public boolean isPasswordChange() {
             return password != null && !password.isEmpty();
