@@ -1,0 +1,21 @@
+{
+  "chapter": "board-list",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-목록-API-없음.json", "task": "T1", "commit": "cc19286", "screen": "GET /api/boards",
+      "see": "엔티티만 있고 목록 API는 아직 없어 status가 404다",
+      "request": { "method": "GET", "path": "/api/boards" } },
+    { "file": "T2-목록-API-없음.json", "task": "T2", "commit": "3de650d", "screen": "GET /api/boards",
+      "see": "샘플 데이터를 넣은 뒤에도 목록 API는 아직 없어 status가 404다",
+      "request": { "method": "GET", "path": "/api/boards" } },
+    { "file": "T3-글-목록.json", "task": "T3", "commit": "8c73249", "screen": "GET /api/boards",
+      "see": "글 5개가 id 5부터 작성자 아이디와 함께 JSON 배열로 온다",
+      "request": { "method": "GET", "path": "/api/boards" } },
+    { "file": "T4-공통-응답.json", "task": "T4", "commit": "2ef17ba", "screen": "GET /api/boards",
+      "see": "같은 목록이 status 200, msg 성공, body 배열 안에 담겨 온다",
+      "request": { "method": "GET", "path": "/api/boards" } },
+    { "file": "done-글-목록.json", "task": "done", "commit": "2ef17ba", "screen": "GET /api/boards",
+      "see": "status 200, msg 성공, body에 글 5개가 id 5부터 작성자 아이디와 함께 온다",
+      "request": { "method": "GET", "path": "/api/boards" } }
+  ]
+}

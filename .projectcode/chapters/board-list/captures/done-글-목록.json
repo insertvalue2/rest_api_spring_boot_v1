@@ -1,0 +1,49 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards"
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": [
+      {
+        "id": 5,
+        "title": "제목5",
+        "content": "내용5",
+        "username": "cos",
+        "createdAt": "2026-11-20T09:47:04.098Z"
+      },
+      {
+        "id": 4,
+        "title": "제목4",
+        "content": "내용4",
+        "username": "cos",
+        "createdAt": "2026-11-20T09:47:04.098Z"
+      },
+      {
+        "id": 3,
+        "title": "제목3",
+        "content": "내용3",
+        "username": "ssar",
+        "createdAt": "2026-11-20T09:47:04.098Z"
+      },
+      {
+        "id": 2,
+        "title": "제목2",
+        "content": "내용2",
+        "username": "ssar",
+        "createdAt": "2026-11-20T09:47:04.098Z"
+      },
+      {
+        "id": 1,
+        "title": "제목1",
+        "content": "내용1",
+        "username": "ssar",
+        "createdAt": "2026-11-20T09:47:04.098Z"
+      }
+    ]
+  }
+}

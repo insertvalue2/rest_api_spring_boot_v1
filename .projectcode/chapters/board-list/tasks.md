@@ -22,6 +22,6 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: 같은 목록이 status 200, msg 성공, body 배열 안에 담겨 온다
   - Why: 모든 API가 같은 모양으로 응답해야 리액트가 한 가지 방법으로 읽는다
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식
