@@ -1,6 +1,6 @@
 # user-join 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 Security 넣고 모든 주소 열기
   - 근거: S1
   - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
