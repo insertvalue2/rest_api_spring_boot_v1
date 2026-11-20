@@ -19,7 +19,7 @@
   - 실행하면: 비밀번호 12로 가입하면 400 비밀번호는 4~20자여야 합니다
   - Why: 잘못된 값이 DB까지 가기 전에 요청 단계에서 막는다
   - 다른 장: project-setup, board-detail
-- [ ] T4 같은 아이디 막기
+- [x] T4 같은 아이디 막기
   - 근거: S5
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/BadRequestException.java, server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
   - 실행하면: ssar로 가입하면 400 이미 존재하는 유저네임입니다

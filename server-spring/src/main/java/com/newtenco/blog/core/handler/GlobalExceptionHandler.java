@@ -1,5 +1,6 @@
 package com.newtenco.blog.core.handler;
 
+import com.newtenco.blog.core.handler.errors.BadRequestException;
 import com.newtenco.blog.core.handler.errors.NotFoundException;
 import com.newtenco.blog.core.util.Resp;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> validation(MethodArgumentNotValidException e) {
         FieldError fe = e.getBindingResult().getFieldErrors().getFirst();
         return Resp.fail(HttpStatus.BAD_REQUEST, fe.getDefaultMessage());
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<?> ex400(BadRequestException e) {
+        return Resp.fail(HttpStatus.BAD_REQUEST, e.getMessage());
     }
 
     @ExceptionHandler(NotFoundException.class)
