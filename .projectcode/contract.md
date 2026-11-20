@@ -9,7 +9,7 @@
 | 저장소 | H2 메모리, Spring Data JPA |
 | 보안 | Spring Security, java-jwt 4.5.0, BCrypt |
 | 기타 | Lombok, Validation |
-| API 테스트 | JUnit 5, MockMvc |
+| API 테스트 | JUnit 5, 실제 포트 8080에 HTTP 요청 |
 
 ## 폴더
 | 무엇 | 폴더 |
@@ -19,7 +19,7 @@
 
 ## 실행
 - 서버: cd server-spring, gradlew.bat bootRun (8080)
-- 테스트: gradlew.bat test (루트. tests가 server-spring을 포함해 MockMvc로 돌린다)
+- 테스트: gradlew.bat test (루트. 8080이 비어 있어야 한다)
 - 빌드: gradlew.bat build
 
 ## 캡처
