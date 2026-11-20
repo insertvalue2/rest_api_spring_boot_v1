@@ -1,7 +1,7 @@
 # board-owner 작업
 
 - [x] 테스트 작성
-- [ ] T1 내 글 표시하기
+- [x] T1 내 글 표시하기
   - 근거: S1, S2, S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardController.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java
   - 실행하면: ssar 토큰으로 GET /api/boards/1이 owner true, 토큰 없이는 false

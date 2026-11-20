@@ -58,9 +58,9 @@ public class BoardService {
         boardRepository.delete(board);
     }
 
-    public BoardResponse.DetailDTO 글상세(Integer id) {
+    public BoardResponse.DetailDTO 글상세(Integer id, Integer sessionUserId) {
         Board board = boardRepository.findByIdJoinUserAndReplies(id)
                 .orElseThrow(() -> new NotFoundException("게시글을 찾을 수 없습니다"));
-        return new BoardResponse.DetailDTO(board);
+        return new BoardResponse.DetailDTO(board, sessionUserId);
     }
 }

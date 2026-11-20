@@ -50,7 +50,8 @@ public class BoardController {
     }
 
     @GetMapping("/api/boards/{id}")
-    public ResponseEntity<?> detail(@PathVariable("id") Integer id) {
-        return Resp.ok(boardService.글상세(id));
+    public ResponseEntity<?> detail(@AuthenticationPrincipal User sessionUser, @PathVariable("id") Integer id) {
+        Integer sessionUserId = sessionUser == null ? null : sessionUser.getId();
+        return Resp.ok(boardService.글상세(id, sessionUserId));
     }
 }

@@ -26,11 +26,12 @@ public class BoardResponse {
         }
     }
 
-    public record DetailDTO(Integer id, String title, String content, Integer userId, String username,
+    public record DetailDTO(Integer id, String title, String content, Integer userId, String username, boolean owner,
                             List<ReplyDTO> replies) {
 
-        public DetailDTO(Board board) {
+        public DetailDTO(Board board, Integer sessionUserId) {
             this(board.getId(), board.getTitle(), board.getContent(), board.getUser().getId(), board.getUser().getUsername(),
+                    board.getUser().getId().equals(sessionUserId),
                     board.getReplies().stream().map(ReplyDTO::new).toList());
         }
 
