@@ -141,7 +141,7 @@ const totalTask = chapters.reduce((n, c) => n + (+c.task || 0), 0)
 const totalShot = chapters.reduce((n, c) => n + (+c.shot || 0), 0)
 const done = chapters.filter((c) => c.state === "완료").length
 const testLine = (table(wiki.check).find((r) => r["점검"] === "테스트") || {})["결과"] || ""
-const testCount = (testLine.match(/(\d+)개 통과/) || [])[1]
+const testCount = (testLine.match(/(\d+)개[^|]*?통과/) || [])[1]
 const stats = [
   [`${done}/${chapters.length}`, "장 완료"],
   [totalTask, "task"],
