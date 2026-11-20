@@ -11,7 +11,7 @@ public class UserResponse {
         }
     }
 
-    public record LoginDTO(String accessToken, DTO user) {
+    public record LoginDTO(String accessToken, String refreshToken, DTO user) {
     }
 
     public record AvailableDTO(boolean available) {

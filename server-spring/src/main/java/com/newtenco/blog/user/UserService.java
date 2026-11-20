@@ -1,5 +1,6 @@
 package com.newtenco.blog.user;
 
+import com.newtenco.blog.auth.RefreshTokenService;
 import com.newtenco.blog.core.handler.errors.BadRequestException;
 import com.newtenco.blog.core.handler.errors.NotFoundException;
 import com.newtenco.blog.core.handler.errors.UnauthorizedException;
@@ -16,6 +17,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final RefreshTokenService refreshTokenService;
 
     @Transactional
     public UserResponse.DTO 회원가입(UserRequest.JoinDTO reqDTO) {
@@ -27,6 +29,7 @@ public class UserService {
         return new UserResponse.DTO(savedUser);
     }
 
+    @Transactional
     public UserResponse.LoginDTO 로그인(UserRequest.LoginDTO reqDTO) {
         User user = userRepository.findByUsername(reqDTO.username())
                 .orElseThrow(() -> new UnauthorizedException("유저네임 혹은 비밀번호가 일치하지 않습니다"));
@@ -34,7 +37,8 @@ public class UserService {
         if (!passwordEncoder.matches(reqDTO.password(), user.getPassword())) {
             throw new UnauthorizedException("유저네임 혹은 비밀번호가 일치하지 않습니다");
         }
-        return new UserResponse.LoginDTO(JwtUtil.create(user), new UserResponse.DTO(user));
+        String refreshToken = refreshTokenService.발급(user);
+        return new UserResponse.LoginDTO(JwtUtil.create(user), refreshToken, new UserResponse.DTO(user));
     }
 
     public UserResponse.DTO 내정보(Integer id) {

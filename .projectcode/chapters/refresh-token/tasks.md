@@ -1,7 +1,7 @@
 # refresh-token 작업
 
 - [x] 테스트 작성
-- [ ] T1 로그인 때 리프레시 토큰 주기
+- [x] T1 로그인 때 리프레시 토큰 주기
   - 근거: S1, S7
   - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshToken.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenRepository.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
   - 실행하면: POST /login 응답 헤더에 Refresh-Token이 오고 H2 콘솔 refresh_token_tb에 같은 값이 있다
