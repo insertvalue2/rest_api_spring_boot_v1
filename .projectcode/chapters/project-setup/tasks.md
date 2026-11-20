@@ -1,6 +1,6 @@
 # project-setup 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 Spring Boot 서버 띄우기
   - 근거: S1
   - 파일: server-spring/settings.gradle, server-spring/build.gradle, server-spring/gradlew, server-spring/gradlew.bat, server-spring/gradle/wrapper, server-spring/.gitignore, server-spring/src/main/java/com/newtenco/blog/BlogApplication.java, server-spring/src/main/resources/application.properties
