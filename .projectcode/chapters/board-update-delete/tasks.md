@@ -1,0 +1,30 @@
+# board-update-delete 작업
+
+- [ ] 테스트 작성
+- [ ] T1 수정 화면 정보 보기
+  - 근거: S1, S7
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: ssar 토큰으로 GET /api/boards/1/edit가 제목1, 내용1을 주고, 토큰 없이는 401이다
+  - Why: 수정 화면은 기존 내용을 채워 보여 줘야 하고, 로그인한 사람만 볼 수 있어야 한다
+  - 다른 장: jwt-auth, board-list
+- [ ] T2 작성자만 수정 정보 보게 막기
+  - 근거: S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/ForbiddenException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+  - 실행하면: ssar 토큰으로 GET /api/boards/4/edit가 403 게시글에 접근할 권한이 없습니다
+  - Why: 로그인했다고 다 되는 것이 아니라 글의 주인인지 따로 확인해야 한다
+  - 다른 장: board-detail, board-list
+- [ ] T3 글 수정하기
+  - 근거: S2, S4, S5, S6
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/Board.java, server-spring/src/main/java/com/newtenco/blog/board/BoardRequest.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: PUT /api/boards/1이 제목1 수정을 돌려주고, 상세도 바뀌어 있다
+  - Why: 트랜잭션 안에서 엔티티 값만 바꾸면 JPA가 알아서 UPDATE를 보낸다
+  - 다른 장: board-list, board-write
+- [ ] T4 글 삭제하기
+  - 근거: S3, S4, S5
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: 새로 쓴 글을 DELETE한 뒤 그 글 상세가 404다
+  - Why: 수정과 같은 주인 확인을 거친 뒤에만 지운다
+  - 다른 장: board-list
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
