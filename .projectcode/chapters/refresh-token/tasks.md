@@ -13,9 +13,9 @@
   - 실행하면: POST /reissue가 새 Authorization과 Refresh-Token 헤더를 주고, 같은 값으로 다시 부르면 401이다
   - Why: 쓴 리프레시 토큰을 바로 지우고 새것을 줘야 훔친 토큰을 두 번 쓸 수 없다
   - 다른 장: jwt-auth
-- [ ] T3 로그아웃하기
-  - 근거: S5, S7
-  - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/auth/AuthController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+- [x] T3 로그아웃하기
+  - 근거: S5, S6, S7
+  - 파일: server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenRepository.java, server-spring/src/main/java/com/newtenco/blog/auth/RefreshTokenService.java, server-spring/src/main/java/com/newtenco/blog/auth/AuthController.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
   - 실행하면: POST /logout 뒤 그 리프레시 토큰으로 재발급하면 401이다
   - Why: 서버에 남은 리프레시 토큰을 지워야 로그아웃한 기기에서 다시 재발급할 수 없다
   - 다른 장: jwt-auth

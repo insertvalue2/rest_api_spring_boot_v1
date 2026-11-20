@@ -51,6 +51,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable());
         http.formLogin(form -> form.disable());
         http.httpBasic(basic -> basic.disable());
+        http.logout(logout -> logout.disable());
 
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
@@ -63,7 +64,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers("/join", "/login", "/check-username").permitAll()
-                .requestMatchers(HttpMethod.POST, "/reissue").permitAll()
+                .requestMatchers(HttpMethod.POST, "/reissue", "/logout").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.GET, "/api/boards/*/edit").authenticated()

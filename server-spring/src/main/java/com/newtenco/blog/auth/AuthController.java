@@ -23,4 +23,10 @@ public class AuthController {
                 .header(RefreshTokenService.HEADER, reissueDTO.refreshToken())
                 .body(new Resp<>(200, "성공", null));
     }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@Valid @RequestBody AuthRequest.RefreshDTO reqDTO) {
+        refreshTokenService.폐기(reqDTO.refreshToken());
+        return Resp.ok(null);
+    }
 }

@@ -45,4 +45,9 @@ public class RefreshTokenService {
         String newRefreshToken = 발급(user);
         return new AuthResponse.ReissueDTO(newAccessToken, newRefreshToken);
     }
+
+    @Transactional
+    public void 폐기(String token) {
+        refreshTokenRepository.findByToken(token).ifPresent(refreshTokenRepository::delete);
+    }
 }
