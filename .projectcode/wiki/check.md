@@ -20,4 +20,7 @@
 - reply 사진은 두 번째 요청이 필요한 확인을 see에서 뺐다. ReplyTest가 확인한다
 - erd는 refresh-token 장 끝 기준이다. 테이블 5개(user_tb, user_role_tb, board_tb, reply_tb, refresh_token_tb)
 - 커밋 Touches 꼬리표는 장마다 "파일을 처음 만든 장"과 "고친 줄을 만든 장" 기준이 섞여 있다. 이력은 다시 쓰지 않았다
+- jwt-auth 테스트 작성(75132b4)은 BoardDetailTest를, admin-api 테스트 작성(8561306)은 JwtAuthTest와 UserJoinTest를 고쳤는데 Touches가 없다. 이력은 다시 쓰지 않았다
+- board-list spec의 응답 예시는 글 3개만 적혀 있다. 그 장 시점 응답은 글 5개다. spec은 장 시점 문서라 고치지 않았다
+- board-list S2 테스트는 board-paging부터 첫 쪽 3개를 확인한다. 테스트 이름에 그렇게 적었다
 - 본문이 깨진 JSON 요청은 지금 500 관리자에게 문의하세요가 된다(HttpMessageNotReadableException). 고치려면 projectcode-fix로 board-detail에 400 처리를 더한다
