@@ -1,0 +1,23 @@
+# admin-api 작업
+
+- [ ] 테스트 작성
+- [ ] T1 역할을 저장하고 토큰에 담기
+  - 근거: S1, S2
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/resources/db/data.sql, server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java
+  - 실행하면: cos로 로그인한 토큰을 jwt.io에서 보면 roles가 USER, ADMIN이다
+  - Why: 누가 관리자인지 알려면 회원마다 역할을 저장하고 토큰에도 담아야 한다
+  - 다른 장: user-join, board-list, user-login
+- [ ] T2 관리자 전용 주소 막기
+  - 근거: S3, S5
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
+  - 실행하면: GET /api/admin/hello가 cos 토큰이면 환영 문구, ssar 토큰이면 403이다
+  - Why: 로그인 여부가 아니라 역할로 주소를 막으려면 필터가 권한 목록을 넣고 규칙이 hasRole로 검사해야 한다
+  - 다른 장: user-join, jwt-auth
+- [ ] T3 관리자가 글 지우기
+  - 근거: S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java, server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
+  - 실행하면: cos 토큰으로 DELETE /api/admin/boards/1(ssar의 글)이 200이다
+  - Why: 관리자 주소는 이미 역할로 막혀 있으므로 서비스는 작성자를 확인하지 않는다
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
