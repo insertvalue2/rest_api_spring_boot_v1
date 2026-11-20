@@ -11,7 +11,7 @@
   - 파일: settings.gradle, gradlew, gradlew.bat, gradle/wrapper, .gitignore, tests/build.gradle
   - 실행하면: 루트 gradlew.bat test가 tests를 돌린다. S1은 통과하고 S2, S3는 아직 실패한다
   - Why: 학생 코드 밖에 둔 행동 테스트로 장마다 동작을 확인하려면 테스트 명령이 먼저 있어야 한다
-- [ ] T3 H2 메모리 DB 연결하고 콘솔 켜기
+- [x] T3 H2 메모리 DB 연결하고 콘솔 켜기
   - 근거: S2, S3
   - 파일: server-spring/build.gradle, server-spring/src/main/resources/application.properties
   - 실행하면: localhost:8080/h2-console에 로그인 화면이 열리고 jdbc:h2:mem:test로 접속된다. 테스트가 모두 통과한다
