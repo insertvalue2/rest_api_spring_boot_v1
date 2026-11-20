@@ -138,3 +138,26 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
 - server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
 - server-spring/src/main/resources/application.properties
+
+## 내 정보 보기 (토큰 인증)
+
+```mermaid
+flowchart LR
+  A[GET /api/users/me] --> B[JwtAuthorizationFilter]
+  B --> C[JwtUtil.verify]
+  B --> D[SecurityConfig URL 규칙]
+  D --> E[UserController]
+  D --> F[RespFilter 401 403]
+  E --> G[UserService]
+  G --> H[UserRepository]
+  H --> I[(user_tb)]
+```
+
+만든 장: jwt-auth
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java
+- server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java
+- server-spring/src/main/java/com/newtenco/blog/core/util/RespFilter.java
+- server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserService.java

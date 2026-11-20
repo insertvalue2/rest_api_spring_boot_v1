@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: user-login 장 끝
+기준: jwt-auth 장 끝
 
 ```
 gradle/
@@ -25,30 +25,33 @@ server-spring/
                 BoardResponse.java
                 BoardService.java
               core/
+                filter/
+                  JwtAuthorizationFilter.java   새로
                 handler/
                   errors/
                     BadRequestException.java
                     NotFoundException.java
-                    UnauthorizedException.java   새로
-                  GlobalExceptionHandler.java   고침
+                    UnauthorizedException.java
+                  GlobalExceptionHandler.java
                 util/
-                  JwtUtil.java   새로
+                  JwtUtil.java   고침
                   Resp.java
+                  RespFilter.java   새로
                 SecurityConfig.java   고침
               user/
                 User.java
                 UserController.java   고침
-                UserRepository.java   고침
-                UserRequest.java   고침
-                UserResponse.java   고침
+                UserRepository.java
+                UserRequest.java
+                UserResponse.java
                 UserService.java   고침
               BlogApplication.java
       resources/
         db/
           data.sql
-        application.properties   고침
+        application.properties
   .gitignore
-  build.gradle   고침
+  build.gradle
   gradlew
   gradlew.bat
   settings.gradle
