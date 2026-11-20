@@ -1,0 +1,28 @@
+# board-detail 작업
+
+- [ ] 테스트 작성
+- [ ] T1 글 상세 API 만들기
+  - 근거: S1
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: GET /api/boards/4가 글 4를 작성자 번호 2, 아이디 cos와 함께 준다. 없는 글 99는 아직 스프링 기본 500이다
+  - Why: 글 하나를 꺼내는 길이 있어야 없는 글을 어떻게 알릴지 다룰 수 있다
+  - 다른 장: board-list
+- [ ] T2 없는 글은 404로 알려주기
+  - 근거: S2
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/errors/NotFoundException.java, server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java, server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+  - 실행하면: GET /api/boards/99가 status 404, msg 게시글을 찾을 수 없습니다, body null로 온다
+  - Why: 예외를 한 곳에서 잡아야 모든 실패가 같은 모양으로 나간다
+  - 다른 장: board-list
+- [ ] T3 처리하지 못한 오류 감싸기
+  - 근거: S3
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+  - 실행하면: GET /api/boards/abc가 status 500, msg 관리자에게 문의하세요로 온다. 없는 주소도 500이 된다
+  - Why: 예상 못한 오류도 공통 모양으로 주고 내부 메시지는 숨긴다
+- [ ] T4 스프링이 아는 오류는 원래 상태 지키기
+  - 근거: S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+  - 실행하면: 없는 주소가 다시 status 404로 오고, abc는 그대로 500이다
+  - Why: 모든 예외를 500으로 바꾸면 없는 주소 같은 흔한 실패까지 서버 고장처럼 보인다
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
