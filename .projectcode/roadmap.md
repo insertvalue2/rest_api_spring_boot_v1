@@ -20,7 +20,7 @@
 ## 장
 | 번호 | 장 ID | 이름 | 종류 | 배울 것 | 상태 |
 |---|---|---|---|---|---|
-| 1 | project-setup | 프로젝트 뼈대 | 기능 | Gradle 구조, Spring Boot 실행, H2 설정, 테스트 실행 | 진행 중 |
+| 1 | project-setup | 프로젝트 뼈대 | 기능 | Gradle 구조, Spring Boot 실행, H2 설정, 테스트 실행 | 완료 |
 | 2 | board-list | 글 목록 | 기능 | JPA 엔티티, ManyToOne, Repository, data.sql, 공통 응답 Resp | 대기 |
 | 3 | board-detail | 글 상세 | 기능 | 응답 DTO, 사용자 예외, 전역 예외 처리 404 | 대기 |
 | 4 | board-paging | 목록 쪽 나누기와 검색 | 기능 | Pageable, Page, 제목 검색 쿼리 | 대기 |

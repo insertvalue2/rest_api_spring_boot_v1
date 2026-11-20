@@ -1,0 +1,18 @@
+{
+  "chapter": "project-setup",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-서버-응답.json", "task": "T1", "commit": "597d5a5", "screen": "GET /",
+      "see": "서버가 응답하고 status가 404다",
+      "request": { "method": "GET", "path": "/" } },
+    { "file": "T2-서버-응답.json", "task": "T2", "commit": "297d662", "screen": "GET /",
+      "see": "루트 테스트 명령을 더한 뒤에도 서버가 응답하고 status가 404다",
+      "request": { "method": "GET", "path": "/" } },
+    { "file": "T3-H2-콘솔.json", "task": "T3", "commit": "0808bcf", "screen": "GET /h2-console",
+      "see": "status가 200이고 H2 콘솔 로그인 화면 HTML이 온다",
+      "request": { "method": "GET", "path": "/h2-console" } },
+    { "file": "done-H2-콘솔.json", "task": "done", "commit": "0808bcf", "screen": "GET /h2-console",
+      "see": "status가 200이고 H2 콘솔 로그인 화면 HTML이 온다",
+      "request": { "method": "GET", "path": "/h2-console" } }
+  ]
+}

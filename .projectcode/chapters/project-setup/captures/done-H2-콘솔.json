@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/h2-console"
+  },
+  "status": 200,
+  "contentType": "text/html",
+  "response": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<!--\nCopyright 2004-2025 H2 Group. Multiple-Licensed under the MPL 2.0,\nand the EPL 1.0 (https://h2database.com/html/license.html).\nInitial Developer: H2 Group\n-->\n<html><head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n    <title>H2 Console</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\" />\n<script type=\"text/javascript\">\nlocation.href = 'login.jsp?jsessionid=607107a56a69a391800bfd6417975083';\n</script>\n</head>\n<body style=\"margin: 20px;\">\n\n<h1>Welcome to H2</h1>\n<h2>No Javascript</h2>\nIf you are not automatically redirected to the login page, then\nJavascript is currently disabled or your browser does not support Javascript.\nFor this application to work, Javascript is essential.\nPlease enable Javascript now, or use another web browser that supports it.\n\n</body></html>\n"
+}

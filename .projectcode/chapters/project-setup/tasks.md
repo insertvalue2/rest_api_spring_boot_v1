@@ -16,6 +16,6 @@
   - 파일: server-spring/build.gradle, server-spring/src/main/resources/application.properties
   - 실행하면: localhost:8080/h2-console에 로그인 화면이 열리고 jdbc:h2:mem:test로 접속된다. 테스트가 모두 통과한다
   - Why: 다음 장부터 JPA 엔티티를 저장할 DB가 있어야 한다
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식
