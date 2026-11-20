@@ -37,5 +37,9 @@ public class UserRequest {
     }
 
     public record UpdateDTO(String email, String password) {
+
+        public boolean isPasswordChange() {
+            return password != null && !password.isEmpty();
+        }
     }
 }

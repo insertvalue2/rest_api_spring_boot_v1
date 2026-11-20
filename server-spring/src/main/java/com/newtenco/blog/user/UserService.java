@@ -47,7 +47,10 @@ public class UserService {
     public UserResponse.DTO 회원수정(UserRequest.UpdateDTO reqDTO, Integer sessionUserId) {
         User user = userRepository.findById(sessionUserId)
                 .orElseThrow(() -> new NotFoundException("회원을 찾을 수 없습니다"));
-        user.update(reqDTO.email(), user.getPassword());
+        String encPassword = reqDTO.isPasswordChange()
+                ? passwordEncoder.encode(reqDTO.password())
+                : user.getPassword();
+        user.update(reqDTO.email(), encPassword);
         return new UserResponse.DTO(user);
     }
 

@@ -7,9 +7,9 @@
   - 실행하면: ssar 토큰으로 PUT /api/users/me {ssar@nate.com, 빈 비밀번호}가 새 이메일을 주고, 1234로 계속 로그인된다
   - Why: 내 정보 화면은 비밀번호 칸이 빈 채로 시작하므로 빈 비밀번호는 바꾸지 않음으로 받아야 한다
   - 다른 장: user-join
-- [ ] T2 비밀번호도 바꾸기
+- [x] T2 비밀번호도 바꾸기
   - 근거: S3
-  - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+  - 파일: server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java
   - 실행하면: {ssar@nate.com, 5678}로 바꾸면 5678로 로그인되고 1234는 401이다
   - Why: 비밀번호에 글자가 있을 때만 암호화해서 바꾼다
   - 다른 장: user-join
