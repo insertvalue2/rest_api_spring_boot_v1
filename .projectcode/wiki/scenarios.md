@@ -266,3 +266,23 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
 - server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
 - server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java
+
+## 내 정보 수정
+
+```mermaid
+flowchart LR
+  A[PUT /api/users/me] --> B[JwtAuthorizationFilter]
+  B --> C[UserController]
+  C --> D[UserRequest.UpdateDTO]
+  C --> E[UserService]
+  E --> F[PasswordEncoder]
+  E --> G[UserRepository]
+  G --> H[(user_tb)]
+```
+
+만든 장: user-update
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java
+- server-spring/src/main/java/com/newtenco/blog/user/User.java

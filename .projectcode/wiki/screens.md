@@ -56,3 +56,8 @@
 처음 나온 장: board-owner
 장 끝 사진: chapters/board-owner/captures/done-글-상세-owner.json
 보이는 것: ssar 토큰으로 글 5를 보면 글 owner false, 댓글 4, 5 owner true
+
+## PUT /api/users/me
+처음 나온 장: user-update
+장 끝 사진: chapters/user-update/captures/done-내-정보-수정.json
+보이는 것: 빈 비밀번호로 보내면 이메일만 바뀌고 200

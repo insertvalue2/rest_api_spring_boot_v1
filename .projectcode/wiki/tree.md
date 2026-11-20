@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: board-owner 장 끝
+기준: user-update 장 끝
 
 ```
 gradle/
@@ -20,11 +20,11 @@ server-spring/
             blog/
               board/
                 Board.java
-                BoardController.java   고침
+                BoardController.java
                 BoardRepository.java
                 BoardRequest.java
-                BoardResponse.java   고침
-                BoardService.java   고침
+                BoardResponse.java
+                BoardService.java
               core/
                 filter/
                   JwtAuthorizationFilter.java
@@ -48,12 +48,12 @@ server-spring/
                 ReplyResponse.java
                 ReplyService.java
               user/
-                User.java
-                UserController.java
+                User.java   고침
+                UserController.java   고침
                 UserRepository.java
-                UserRequest.java
+                UserRequest.java   고침
                 UserResponse.java
-                UserService.java
+                UserService.java   고침
               BlogApplication.java
       resources/
         db/
