@@ -7,7 +7,7 @@
   - 실행하면: 스타터만 넣으면 /api/boards가 401로 잠기고, SecurityConfig를 넣으면 GET /api/boards가 다시 200이다
   - Why: Security는 넣는 순간 모든 주소를 잠그므로, 로그인을 만들기 전까지 쓰지 않는 기능을 끄고 주소를 열어 둔다
   - 다른 장: project-setup
-- [ ] T2 회원가입 API 만들기
+- [x] T2 회원가입 API 만들기
   - 근거: S2, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java, server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java, server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
   - 실행하면: POST /join이 id 3, love, 이메일을 주고, H2 콘솔의 password는 $2a$로 시작한다
