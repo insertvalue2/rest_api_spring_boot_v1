@@ -66,3 +66,47 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/core/handler/errors/NotFoundException.java
 - server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
 - server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java
+
+## 회원가입
+
+```mermaid
+flowchart LR
+  A[POST /join] --> B[UserController]
+  B --> C[UserService]
+  C --> D[PasswordEncoder]
+  C --> E[UserRepository]
+  E --> F[(user_tb)]
+  C --> G[BadRequestException]
+  G --> H[GlobalExceptionHandler]
+  B --> I[Resp]
+```
+
+만든 장: user-join
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java
+- server-spring/src/main/java/com/newtenco/blog/user/User.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/errors/BadRequestException.java
+- server-spring/src/main/java/com/newtenco/blog/core/handler/GlobalExceptionHandler.java
+
+## 아이디 중복 확인
+
+```mermaid
+flowchart LR
+  A[GET /check-username] --> B[UserController]
+  B --> C[UserService]
+  C --> D[UserRepository]
+  D --> E[(user_tb)]
+  C --> F[UserResponse.AvailableDTO]
+```
+
+만든 장: user-join
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserService.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRepository.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java

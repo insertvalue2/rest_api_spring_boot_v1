@@ -16,3 +16,13 @@
 처음 나온 장: board-detail
 장 끝 사진: chapters/board-detail/captures/done-없는-글-404.json
 보이는 것: 없는 글 99를 요청하면 status 404, msg 게시글을 찾을 수 없습니다, body null이 온다
+
+## POST /join
+처음 나온 장: user-join
+장 끝 사진: chapters/user-join/captures/done-회원가입.json
+보이는 것: love 가입이 200과 id 3, username love, email을 준다
+
+## GET /check-username
+처음 나온 장: user-join
+장 끝 사진: chapters/user-join/captures/T5-중복-확인.json
+보이는 것: ssar은 available false

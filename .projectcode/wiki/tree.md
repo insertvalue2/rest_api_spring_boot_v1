@@ -1,6 +1,6 @@
 # 폴더 구조
 
-기준: board-paging 장 끝
+기준: user-join 장 끝
 
 ```
 gradle/
@@ -20,26 +20,33 @@ server-spring/
             blog/
               board/
                 Board.java
-                BoardController.java   고침
-                BoardRepository.java   고침
-                BoardResponse.java   고침
-                BoardService.java   고침
+                BoardController.java
+                BoardRepository.java
+                BoardResponse.java
+                BoardService.java
               core/
                 handler/
                   errors/
+                    BadRequestException.java   새로
                     NotFoundException.java
-                  GlobalExceptionHandler.java
+                  GlobalExceptionHandler.java   고침
                 util/
                   Resp.java
+                SecurityConfig.java   새로
               user/
-                User.java
+                User.java   고침
+                UserController.java   새로
+                UserRepository.java   새로
+                UserRequest.java   새로
+                UserResponse.java   새로
+                UserService.java   새로
               BlogApplication.java
       resources/
         db/
           data.sql
         application.properties
   .gitignore
-  build.gradle
+  build.gradle   고침
   gradlew
   gradlew.bat
   settings.gradle
