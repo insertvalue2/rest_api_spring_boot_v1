@@ -12,7 +12,7 @@
   - 실행하면: H2 콘솔에서 select하면 회원 2명, 글 5개가 나온다
   - Why: 목록 API를 만들기 전에 보여줄 글이 DB에 있어야 한다
   - 다른 장: project-setup
-- [ ] T3 글 목록 API 만들기
+- [x] T3 글 목록 API 만들기
   - 근거: S2, S3
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: GET /api/boards가 글 5개를 id 5부터 작성자 아이디와 함께 JSON 배열로 준다
