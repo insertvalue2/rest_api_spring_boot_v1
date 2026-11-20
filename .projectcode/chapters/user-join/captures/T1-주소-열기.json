@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/boards"
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "boards": [
+        {
+          "id": 5,
+          "title": "제목5",
+          "content": "내용5",
+          "username": "cos",
+          "createdAt": "2026-11-20T10:23:50.742Z"
+        },
+        {
+          "id": 4,
+          "title": "제목4",
+          "content": "내용4",
+          "username": "cos",
+          "createdAt": "2026-11-20T10:23:50.742Z"
+        },
+        {
+          "id": 3,
+          "title": "제목3",
+          "content": "내용3",
+          "username": "ssar",
+          "createdAt": "2026-11-20T10:23:50.742Z"
+        }
+      ],
+      "number": 0,
+      "totalPage": 2,
+      "isFirst": true,
+      "isLast": false
+    }
+  },
+  "headers": {
+    "X-Frame-Options": "SAMEORIGIN"
+  }
+}

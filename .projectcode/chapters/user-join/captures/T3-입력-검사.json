@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/join",
+    "body": {
+      "username": "love",
+      "password": "12",
+      "email": "love@nate.com"
+    }
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "비밀번호는 4~20자여야 합니다",
+    "body": null
+  }
+}

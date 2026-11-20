@@ -1,0 +1,28 @@
+{
+  "chapter": "user-join",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-주소-열기.json", "task": "T1", "commit": "cdaa170", "screen": "GET /api/boards",
+      "see": "Security를 넣은 뒤에도 GET /api/boards가 200으로 글 목록을 주고 X-Frame-Options는 SAMEORIGIN이다",
+      "responseHeaders": ["X-Frame-Options"],
+      "request": { "method": "GET", "path": "/api/boards" } },
+    { "file": "T2-회원가입.json", "task": "T2", "commit": "1060d34", "screen": "POST /join",
+      "see": "POST /join이 id 3, love, 이메일을 준다",
+      "request": { "method": "POST", "path": "/join", "body": { "username": "love", "password": "1234", "email": "love@nate.com" } } },
+    { "file": "T3-입력-검사.json", "task": "T3", "commit": "09c8f54", "screen": "POST /join",
+      "see": "비밀번호 12로 가입하면 400 비밀번호는 4~20자여야 합니다",
+      "request": { "method": "POST", "path": "/join", "body": { "username": "love", "password": "12", "email": "love@nate.com" } } },
+    { "file": "T4-같은-아이디.json", "task": "T4", "commit": "dbb6ff5", "screen": "POST /join",
+      "see": "ssar로 가입하면 400 이미 존재하는 유저네임입니다",
+      "request": { "method": "POST", "path": "/join", "body": { "username": "ssar", "password": "1234", "email": "ssar@nate.com" } } },
+    { "file": "T5-중복-확인.json", "task": "T5", "commit": "5e4e8e6", "screen": "GET /check-username?username=ssar",
+      "see": "?username=ssar은 available false",
+      "request": { "method": "GET", "path": "/check-username?username=ssar" } },
+    { "file": "T6-값-빠짐.json", "task": "T6", "commit": "561c124", "screen": "GET /check-username",
+      "see": "/check-username만 부르면 400 username:값을 입력해주세요",
+      "request": { "method": "GET", "path": "/check-username" } },
+    { "file": "done-회원가입.json", "task": "done", "commit": "561c124", "screen": "POST /join",
+      "see": "love로 가입하면 id 3, love, 이메일을 준다",
+      "request": { "method": "POST", "path": "/join", "body": { "username": "love", "password": "1234", "email": "love@nate.com" } } }
+  ]
+}

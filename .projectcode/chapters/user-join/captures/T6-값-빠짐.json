@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/check-username"
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "username:값을 입력해주세요",
+    "body": null
+  }
+}

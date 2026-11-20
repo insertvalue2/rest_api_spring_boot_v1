@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/join",
+    "body": {
+      "username": "ssar",
+      "password": "1234",
+      "email": "ssar@nate.com"
+    }
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "이미 존재하는 유저네임입니다",
+    "body": null
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/check-username?username=ssar"
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "available": false
+    }
+  }
+}
