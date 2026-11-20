@@ -1,6 +1,7 @@
 package com.newtenco.blog.user;
 
 import com.newtenco.blog.core.handler.errors.BadRequestException;
+import com.newtenco.blog.core.handler.errors.NotFoundException;
 import com.newtenco.blog.core.handler.errors.UnauthorizedException;
 import com.newtenco.blog.core.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,12 @@ public class UserService {
             throw new UnauthorizedException("유저네임 혹은 비밀번호가 일치하지 않습니다");
         }
         return new UserResponse.LoginDTO(JwtUtil.create(user), new UserResponse.DTO(user));
+    }
+
+    public UserResponse.DTO 내정보(Integer id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("회원을 찾을 수 없습니다"));
+        return new UserResponse.DTO(user);
     }
 
     public UserResponse.AvailableDTO 유저네임중복체크(String username) {

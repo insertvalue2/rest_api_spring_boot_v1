@@ -5,6 +5,7 @@ import com.newtenco.blog.core.util.Resp;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +29,11 @@ public class UserController {
         return ResponseEntity.ok()
                 .header(JwtUtil.HEADER, loginDTO.accessToken())
                 .body(new Resp<>(200, "성공", loginDTO.user()));
+    }
+
+    @GetMapping("/api/users/me")
+    public ResponseEntity<?> me(@AuthenticationPrincipal User sessionUser) {
+        return Resp.ok(userService.내정보(sessionUser.getId()));
     }
 
     @GetMapping("/check-username")

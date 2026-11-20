@@ -2,6 +2,7 @@ package com.newtenco.blog.core.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.newtenco.blog.user.User;
 
 import java.util.Date;
@@ -23,5 +24,12 @@ public class JwtUtil {
                 .withClaim("username", user.getUsername())
                 .sign(ALGORITHM);
         return TOKEN_PREFIX + jwt;
+    }
+
+    public static User verify(String jwt) {
+        DecodedJWT decoded = JWT.require(ALGORITHM).build().verify(jwt);
+        Integer id = decoded.getClaim("id").asInt();
+        String username = decoded.getSubject();
+        return User.builder().id(id).username(username).build();
     }
 }
