@@ -19,6 +19,11 @@
   - 실행하면: 토큰을 담아 GET /nothing을 부르면 403 권한이 없습니다
   - Why: 규칙에 적지 않은 주소는 모두 막아야 실수로 열린 주소가 생기지 않는다
   - 다른 장: user-login
+- [x] 테스트 보강
+  - 근거: 빠짐. S4의 /join과 사전 요청, S6의 401 응답을 테스트가 확인하지 않음
+  - 파일: tests/com/newtenco/blog/JwtAuthTest.java
+  - 실행하면: 토큰 없이 /join과 OPTIONS 사전 요청이 200이고, 401 응답에도 JSESSIONID가 없다
+  - Why: 테스트가 spec의 할 일을 모두 확인해야 장이 끝났다고 말할 수 있다
 - [ ] 수렴 점검
 - [ ] 캡처
 - [ ] 도식

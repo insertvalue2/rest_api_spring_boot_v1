@@ -1,14 +1,19 @@
 package com.newtenco.blog;
 
 import com.jayway.jsonpath.JsonPath;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import javax.sql.DataSource;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.Connection;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -18,6 +23,16 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class JwtAuthTest {
 
     private final HttpClient client = HttpClient.newHttpClient();
+
+    @Autowired
+    private DataSource dataSource;
+
+    @AfterEach
+    void removeJoinedUsers() throws Exception {
+        try (Connection connection = dataSource.getConnection()) {
+            connection.createStatement().executeUpdate("delete from user_tb where username not in ('ssar', 'cos')");
+        }
+    }
 
     private String loginToken() throws Exception {
         HttpRequest request = HttpRequest.newBuilder(URI.create("http://localhost:8080/login"))
@@ -77,6 +92,22 @@ class JwtAuthTest {
         assertEquals(200, get("/check-username?username=nobody", null).statusCode());
         assertEquals(200, get("/h2-console/", null).statusCode());
         assertEquals(false, loginToken().isEmpty());
+
+        HttpRequest join = HttpRequest.newBuilder(URI.create("http://localhost:8080/join"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{\"username\":\"jwtuser\",\"password\":\"1234\",\"email\":\"jwt@nate.com\"}"))
+                .build();
+        assertEquals(200, client.send(join, HttpResponse.BodyHandlers.ofString()).statusCode());
+
+        HttpRequest preflight = HttpRequest.newBuilder(URI.create("http://localhost:8080/api/users/me"))
+                .header("Origin", "http://localhost:5173")
+                .header("Access-Control-Request-Method", "GET")
+                .header("Access-Control-Request-Headers", "authorization")
+                .method("OPTIONS", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> options = client.send(preflight, HttpResponse.BodyHandlers.ofString());
+        assertEquals(200, options.statusCode());
+        assertEquals("http://localhost:5173", options.headers().firstValue("Access-Control-Allow-Origin").orElse(null));
     }
 
     @Test
@@ -88,6 +119,10 @@ class JwtAuthTest {
     @Test
     @DisplayName("S6 서버는 로그인 상태를 세션에 저장하지 않는다 (응답에 JSESSIONID 쿠키가 없다)")
     void s6() throws Exception {
+        HttpResponse<String> denied = get("/api/users/me", null);
+        assertEquals(401, denied.statusCode());
+        assertFalse(denied.headers().allValues("Set-Cookie").stream().anyMatch(cookie -> cookie.contains("JSESSIONID")));
+
         HttpResponse<String> response = get("/api/users/me", loginToken());
         assertEquals(200, response.statusCode());
         assertFalse(response.headers().allValues("Set-Cookie").stream().anyMatch(cookie -> cookie.contains("JSESSIONID")));
