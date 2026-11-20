@@ -1,6 +1,6 @@
 # jwt-auth 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 토큰을 검사하는 필터와 내 정보 API
   - 근거: S1, S6
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java, server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java

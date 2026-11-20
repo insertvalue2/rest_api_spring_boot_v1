@@ -63,7 +63,16 @@ class BoardDetailTest {
     @Test
     @DisplayName("S4 없는 주소를 요청하면 404를 공통 응답 모양으로 돌려준다")
     void s4() throws Exception {
-        HttpResponse<String> response = get("/api/nothing-here");
+        HttpRequest login = HttpRequest.newBuilder(URI.create("http://localhost:8080/login"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{\"username\":\"ssar\",\"password\":\"1234\"}"))
+                .build();
+        String token = client.send(login, HttpResponse.BodyHandlers.ofString()).headers().firstValue("Authorization").orElse("");
+        HttpRequest request = HttpRequest.newBuilder(URI.create("http://localhost:8080/api/nothing-here"))
+                .header("Authorization", token)
+                .GET()
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(404, response.statusCode());
         Map<String, Object> json = JsonPath.read(response.body(), "$");
         assertEquals(404, json.get("status"));
