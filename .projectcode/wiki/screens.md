@@ -66,3 +66,8 @@
 처음 나온 장: admin-api
 장 끝 사진: chapters/admin-api/captures/done-관리자-권한.json
 보이는 것: ssar(USER) 토큰으로 GET /api/admin/hello는 403 권한이 없습니다
+
+## PUT /api/admin/users/{id}
+처음 나온 장: admin-roles
+장 끝 사진: chapters/admin-roles/captures/done-역할-바꾸기.json
+보이는 것: cos 토큰으로 ssar 역할을 USER, ADMIN으로 바꾸면 200과 roles

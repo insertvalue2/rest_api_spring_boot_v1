@@ -309,3 +309,23 @@ flowchart LR
 - server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java
 - server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
 - server-spring/src/main/resources/db/data.sql
+
+## 관리자의 회원 역할 바꾸기
+
+```mermaid
+flowchart LR
+  A[PUT /api/admin/users/id] --> B[SecurityConfig hasRole ADMIN]
+  B --> C[AdminController]
+  C --> D[AdminService]
+  D --> E[UserRepository]
+  E --> F[(user_role_tb)]
+  D --> G[BadRequestException]
+```
+
+만든 장: admin-roles
+맡는 파일
+- server-spring/src/main/java/com/newtenco/blog/admin/AdminController.java
+- server-spring/src/main/java/com/newtenco/blog/admin/AdminService.java
+- server-spring/src/main/java/com/newtenco/blog/user/User.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserRequest.java
+- server-spring/src/main/java/com/newtenco/blog/user/UserResponse.java
