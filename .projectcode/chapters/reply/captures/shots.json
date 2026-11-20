@@ -1,0 +1,74 @@
+{
+  "chapter": "reply",
+  "api": "http://localhost:8080",
+  "shots": [
+    {
+      "file": "T1-글-상세-댓글.json",
+      "task": "T1",
+      "commit": "4ef779e",
+      "screen": "GET /api/boards/4",
+      "see": "replies에 댓글1~3이 오고 작성자는 cos다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/4"
+      }
+    },
+    {
+      "file": "T2-댓글-쓰기.json",
+      "task": "T2",
+      "commit": "578b50e",
+      "screen": "POST /api/replies",
+      "see": "ssar 토큰으로 보내면 200이고 id 6인 댓글6이 온다",
+      "request": {
+        "method": "POST",
+        "path": "/api/replies",
+        "body": {
+          "boardId": 4,
+          "comment": "댓글6"
+        },
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4OTYzLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.k257B5wNlvuWcg6BJhvkGcplI8xXs-rYh0eJTFsGR1I18oWFiQhrIJk3EOaaUhcq_qiLHPrmwxWVd8coLguXGw"
+        }
+      }
+    },
+    {
+      "file": "T3-댓글-삭제-권한.json",
+      "task": "T3",
+      "commit": "2c051e6",
+      "screen": "DELETE /api/replies/1",
+      "see": "ssar 토큰으로 cos 댓글을 지우면 403 댓글을 삭제할 권한이 없습니다",
+      "request": {
+        "method": "DELETE",
+        "path": "/api/replies/1",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4OTgyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.cPIiX0FKFCTcf3jmzwMX49QlRAzMFDi7jemKbItRYOPYhdX-dS-OSKC9xcKfM7GYJe1yzSD2eTPA1qO4BxbIcA"
+        }
+      }
+    },
+    {
+      "file": "T4-글-삭제-댓글도.json",
+      "task": "T4",
+      "commit": "b4e0404",
+      "screen": "DELETE /api/boards/4",
+      "see": "cos 토큰으로 댓글이 있는 글 4를 지우면 200이다",
+      "request": {
+        "method": "DELETE",
+        "path": "/api/boards/4",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb3MiLCJleHAiOjE3OTUyNTkwMDQsImlkIjoyLCJ1c2VybmFtZSI6ImNvcyJ9.NDSHhVAw50JEmxiFeo8v2rvLs558PU4vfHblmkjCgwZpQRCIjZ6meA94n9T2dme6yaAtY2Tc8_UdN9kHRYlsDw"
+        }
+      }
+    },
+    {
+      "file": "done-글-상세.json",
+      "task": "done",
+      "commit": "b4e0404",
+      "screen": "GET /api/boards/4",
+      "see": "글 4 상세에 replies로 댓글 목록이 담겨 온다",
+      "request": {
+        "method": "GET",
+        "path": "/api/boards/4"
+      }
+    }
+  ]
+}

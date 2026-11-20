@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/api/replies/1",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4OTgyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.cPIiX0FKFCTcf3jmzwMX49QlRAzMFDi7jemKbItRYOPYhdX-dS-OSKC9xcKfM7GYJe1yzSD2eTPA1qO4BxbIcA"
+    }
+  },
+  "status": 403,
+  "contentType": "application/json",
+  "response": {
+    "status": 403,
+    "msg": "댓글을 삭제할 권한이 없습니다",
+    "body": null
+  }
+}

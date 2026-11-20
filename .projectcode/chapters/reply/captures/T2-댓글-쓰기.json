@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/replies",
+    "body": {
+      "boardId": 4,
+      "comment": "댓글6"
+    },
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU4OTYzLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.k257B5wNlvuWcg6BJhvkGcplI8xXs-rYh0eJTFsGR1I18oWFiQhrIJk3EOaaUhcq_qiLHPrmwxWVd8coLguXGw"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 6,
+      "comment": "댓글6",
+      "boardId": 4,
+      "userId": 1,
+      "username": "ssar"
+    }
+  }
+}
