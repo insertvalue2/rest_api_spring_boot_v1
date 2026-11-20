@@ -1,5 +1,7 @@
 package com.newtenco.blog.auth;
 
+import com.newtenco.blog.core.handler.errors.UnauthorizedException;
+import com.newtenco.blog.core.util.JwtUtil;
 import com.newtenco.blog.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,5 +29,20 @@ public class RefreshTokenService {
                 .build();
         refreshTokenRepository.save(refreshToken);
         return refreshToken.getToken();
+    }
+
+    @Transactional
+    public AuthResponse.ReissueDTO 재발급(String token) {
+        RefreshToken refreshToken = refreshTokenRepository.findByTokenJoinUser(token)
+                .orElseThrow(() -> new UnauthorizedException("다시 로그인해주세요"));
+        if (refreshToken.isExpired()) {
+            throw new UnauthorizedException("다시 로그인해주세요");
+        }
+        refreshTokenRepository.delete(refreshToken);
+
+        User user = refreshToken.getUser();
+        String newAccessToken = JwtUtil.create(user);
+        String newRefreshToken = 발급(user);
+        return new AuthResponse.ReissueDTO(newAccessToken, newRefreshToken);
     }
 }

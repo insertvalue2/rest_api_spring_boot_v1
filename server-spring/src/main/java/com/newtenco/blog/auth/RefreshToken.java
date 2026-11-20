@@ -40,4 +40,8 @@ public class RefreshToken {
         this.user = user;
         this.expiresAt = expiresAt;
     }
+
+    public boolean isExpired() {
+        return expiresAt.before(new Timestamp(System.currentTimeMillis()));
+    }
 }
