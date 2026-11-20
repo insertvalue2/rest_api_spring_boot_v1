@@ -1,0 +1,24 @@
+# jwt-auth 작업
+
+- [ ] 테스트 작성
+- [ ] T1 토큰을 검사하는 필터와 내 정보 API
+  - 근거: S1, S6
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/filter/JwtAuthorizationFilter.java, server-spring/src/main/java/com/newtenco/blog/core/util/JwtUtil.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java, server-spring/src/main/java/com/newtenco/blog/user/UserService.java, server-spring/src/main/java/com/newtenco/blog/user/UserController.java
+  - 실행하면: 로그인 토큰을 담아 GET /api/users/me를 부르면 ssar 정보가 오고, 응답에 JSESSIONID가 없다
+  - Why: 서버가 세션을 기억하지 않으므로 요청마다 토큰을 검사해 누구인지 알아낸다
+  - 다른 장: user-login
+- [ ] T2 로그인이 필요한 주소 막기
+  - 근거: S2, S3, S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/RespFilter.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+  - 실행하면: 토큰 없이 /api/users/me는 401 로그인 후 이용해주세요. 글 목록과 /login은 그대로 열린다
+  - Why: 누구인지 알아낸 다음에는 주소마다 로그인이 필요한지 정해 막아야 한다
+  - 다른 장: user-login
+- [ ] T3 규칙에 없는 주소 막기
+  - 근거: S5
+  - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/RespFilter.java, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
+  - 실행하면: 토큰을 담아 GET /nothing을 부르면 403 권한이 없습니다
+  - Why: 규칙에 적지 않은 주소는 모두 막아야 실수로 열린 주소가 생기지 않는다
+  - 다른 장: user-login
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
