@@ -1,6 +1,6 @@
 # board-list 작업
 
-- [ ] 테스트 작성
+- [x] 테스트 작성
 - [ ] T1 회원과 글 엔티티 만들기
   - 근거: S1
   - 파일: server-spring/src/main/java/com/newtenco/blog/user/User.java, server-spring/src/main/java/com/newtenco/blog/board/Board.java
