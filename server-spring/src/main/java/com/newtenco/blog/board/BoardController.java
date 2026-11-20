@@ -2,6 +2,7 @@ package com.newtenco.blog.board;
 
 import com.newtenco.blog.core.util.Resp;
 import com.newtenco.blog.user.User;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -25,7 +26,7 @@ public class BoardController {
     }
 
     @PostMapping("/api/boards")
-    public ResponseEntity<?> save(@AuthenticationPrincipal User sessionUser, @RequestBody BoardRequest.SaveDTO reqDTO) {
+    public ResponseEntity<?> save(@AuthenticationPrincipal User sessionUser, @Valid @RequestBody BoardRequest.SaveDTO reqDTO) {
         return Resp.ok(boardService.글쓰기(reqDTO, sessionUser));
     }
 
