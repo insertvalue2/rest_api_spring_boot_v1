@@ -1,0 +1,24 @@
+# board-paging 작업
+
+- [ ] 테스트 작성
+- [ ] T1 목록을 3개씩 나누기
+  - 근거: S1, S2
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: GET /api/boards가 글 5, 4, 3만 주고, ?page=1은 글 2, 1을 준다. body는 아직 배열이다
+  - Why: 글이 많아지면 한 번에 다 주지 않고 쪽으로 나눠 줘야 한다
+  - 다른 장: board-list
+- [ ] T2 쪽 정보 함께 주기
+  - 근거: S3
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java
+  - 실행하면: body가 boards와 number 0, totalPage 2, isFirst true, isLast false로 온다
+  - Why: 받는 쪽이 다음 쪽 버튼을 그리려면 지금 쪽과 전체 쪽 수를 알아야 한다
+  - 다른 장: board-list
+- [ ] T3 제목으로 검색하기
+  - 근거: S4
+  - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
+  - 실행하면: ?keyword=제목1이 글 하나만 주고 totalPage는 1이다
+  - Why: 같은 쪽 나누기에 조건 하나만 더하면 검색 결과도 쪽으로 나뉜다
+  - 다른 장: board-list
+- [ ] 수렴 점검
+- [ ] 캡처
+- [ ] 도식
