@@ -1,7 +1,7 @@
 # user-join 작업
 
 - [x] 테스트 작성
-- [ ] T1 Security 넣고 모든 주소 열기
+- [x] T1 Security 넣고 모든 주소 열기
   - 근거: S1
   - 파일: server-spring/build.gradle, server-spring/src/main/java/com/newtenco/blog/core/SecurityConfig.java
   - 실행하면: 스타터만 넣으면 /api/boards가 401로 잠기고, SecurityConfig를 넣으면 GET /api/boards가 다시 200이다
