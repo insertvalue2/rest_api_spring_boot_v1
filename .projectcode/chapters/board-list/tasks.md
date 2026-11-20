@@ -17,7 +17,7 @@
   - 파일: server-spring/src/main/java/com/newtenco/blog/board/BoardRepository.java, server-spring/src/main/java/com/newtenco/blog/board/BoardResponse.java, server-spring/src/main/java/com/newtenco/blog/board/BoardService.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: GET /api/boards가 글 5개를 id 5부터 작성자 아이디와 함께 JSON 배열로 준다
   - Why: 글과 작성자를 한 번에 꺼내 응답 DTO로 바꿔야 password 없이 필요한 칸만 내보낸다
-- [ ] T4 공통 응답으로 감싸기
+- [x] T4 공통 응답으로 감싸기
   - 근거: S4
   - 파일: server-spring/src/main/java/com/newtenco/blog/core/util/Resp.java, server-spring/src/main/java/com/newtenco/blog/board/BoardController.java
   - 실행하면: 같은 목록이 status 200, msg 성공, body 배열 안에 담겨 온다
