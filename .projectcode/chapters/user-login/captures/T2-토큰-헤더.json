@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/login",
+    "body": {
+      "username": "ssar",
+      "password": "1234"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "username": "ssar",
+      "email": "ssar@metacoding.com"
+    }
+  },
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3MDcyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.XssYZmeH_Penoli33ewUHjbegc3PALHwFuCQidge00ZxyboMwdTJDKjnuvj0L5vLn6i3LNdyZrnIdMRzaMPnHg"
+  }
+}

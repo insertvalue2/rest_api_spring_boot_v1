@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/login",
+    "headers": {
+      "Origin": "http://localhost:5173"
+    },
+    "body": {
+      "username": "ssar",
+      "password": "1234"
+    }
+  },
+  "status": 200,
+  "contentType": "application/json",
+  "response": {
+    "status": 200,
+    "msg": "성공",
+    "body": {
+      "id": 1,
+      "username": "ssar",
+      "email": "ssar@metacoding.com"
+    }
+  },
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2FyIiwiZXhwIjoxNzk1MjU3MTIyLCJpZCI6MSwidXNlcm5hbWUiOiJzc2FyIn0.AgDJpoq-YyAyieFslX2TctP6i6GFyA6VnHbf6unUe5plWYmw8D_3Wili65Sj666damPmijLFzJQ469afCwu3Jw",
+    "Access-Control-Allow-Origin": "http://localhost:5173",
+    "Access-Control-Expose-Headers": "Authorization"
+  }
+}

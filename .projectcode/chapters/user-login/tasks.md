@@ -25,6 +25,6 @@
   - 실행하면: Origin http://localhost:5173으로 로그인하면 Access-Control-Expose-Headers: Authorization이 온다
   - Why: 브라우저는 노출하지 않은 응답 헤더를 자바스크립트에 숨기므로 Authorization을 열어 줘야 리액트가 토큰을 꺼낸다
   - 다른 장: project-setup, user-join
-- [ ] 수렴 점검
-- [ ] 캡처
-- [ ] 도식
+- [x] 수렴 점검
+- [x] 캡처
+- [x] 도식

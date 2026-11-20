@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/login",
+    "body": {
+      "username": "ssar",
+      "password": ""
+    }
+  },
+  "status": 400,
+  "contentType": "application/json",
+  "response": {
+    "status": 400,
+    "msg": "비밀번호를 입력해주세요",
+    "body": null
+  }
+}

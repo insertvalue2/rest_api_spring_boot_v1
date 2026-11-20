@@ -1,0 +1,24 @@
+{
+  "chapter": "user-login",
+  "api": "http://localhost:8080",
+  "shots": [
+    { "file": "T1-로그인.json", "task": "T1", "commit": "f578c7b", "screen": "POST /login",
+      "see": "ssar/1234로 로그인하면 200과 회원 정보",
+      "request": { "method": "POST", "path": "/login", "body": { "username": "ssar", "password": "1234" } } },
+    { "file": "T2-토큰-헤더.json", "task": "T2", "commit": "6016e4a", "screen": "POST /login",
+      "see": "응답 헤더 Authorization이 Bearer eyJ로 시작한다",
+      "responseHeaders": ["Authorization"],
+      "request": { "method": "POST", "path": "/login", "body": { "username": "ssar", "password": "1234" } } },
+    { "file": "T3-빈-값.json", "task": "T3", "commit": "0483deb", "screen": "POST /login",
+      "see": "비밀번호를 비우면 400 비밀번호를 입력해주세요",
+      "request": { "method": "POST", "path": "/login", "body": { "username": "ssar", "password": "" } } },
+    { "file": "T4-헤더-노출.json", "task": "T4", "commit": "383b2c9", "screen": "POST /login",
+      "see": "Origin http://localhost:5173으로 로그인하면 Access-Control-Expose-Headers: Authorization이 온다",
+      "responseHeaders": ["Authorization", "Access-Control-Allow-Origin", "Access-Control-Expose-Headers"],
+      "request": { "method": "POST", "path": "/login", "headers": { "Origin": "http://localhost:5173" }, "body": { "username": "ssar", "password": "1234" } } },
+    { "file": "done-로그인.json", "task": "done", "commit": "383b2c9", "screen": "POST /login",
+      "see": "Origin http://localhost:5173으로 ssar/1234 로그인하면 200, Authorization Bearer 토큰, Access-Control-Expose-Headers: Authorization이 온다",
+      "responseHeaders": ["Authorization", "Access-Control-Allow-Origin", "Access-Control-Expose-Headers"],
+      "request": { "method": "POST", "path": "/login", "headers": { "Origin": "http://localhost:5173" }, "body": { "username": "ssar", "password": "1234" } } }
+  ]
+}
