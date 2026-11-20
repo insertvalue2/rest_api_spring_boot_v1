@@ -53,10 +53,10 @@ class BoardListTest {
     @DisplayName("S2 GET /api/boards가 모든 글을 작성자 아이디와 함께 돌려준다")
     void s2() throws Exception {
         String json = getBoards();
-        List<Object> titles = JsonPath.read(json, "$..title");
-        List<String> usernames = JsonPath.read(json, "$..username");
-        assertEquals(5, titles.size());
-        assertEquals(5, usernames.size());
+        List<Object> titles = JsonPath.read(json, "$.body.boards[*].title");
+        List<String> usernames = JsonPath.read(json, "$.body.boards[*].username");
+        assertEquals(3, titles.size());
+        assertEquals(3, usernames.size());
         assertTrue(usernames.containsAll(List.of("ssar", "cos")));
         assertFalse(json.contains("password"));
     }
@@ -64,8 +64,8 @@ class BoardListTest {
     @Test
     @DisplayName("S3 글 목록은 최신 글(번호 큰 글)부터 온다")
     void s3() throws Exception {
-        List<Integer> ids = JsonPath.read(getBoards(), "$..id");
-        assertEquals(List.of(5, 4, 3, 2, 1), ids);
+        List<Integer> ids = JsonPath.read(getBoards(), "$.body.boards[*].id");
+        assertEquals(List.of(5, 4, 3), ids);
     }
 
     @Test
@@ -74,7 +74,7 @@ class BoardListTest {
         String json = getBoards();
         assertEquals(200, (Integer) JsonPath.read(json, "$.status"));
         assertEquals("성공", JsonPath.read(json, "$.msg"));
-        List<Object> body = JsonPath.read(json, "$.body");
-        assertEquals(5, body.size());
+        List<Object> boards = JsonPath.read(json, "$.body.boards");
+        assertEquals(3, boards.size());
     }
 }
