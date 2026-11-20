@@ -50,7 +50,7 @@ class BoardListTest {
     }
 
     @Test
-    @DisplayName("S2 GET /api/boards가 모든 글을 작성자 아이디와 함께 돌려준다")
+    @DisplayName("S2 GET /api/boards가 모든 글을 작성자 아이디와 함께 돌려준다 (board-paging부터는 한 쪽에 3개씩)")
     void s2() throws Exception {
         String json = getBoards();
         List<Object> titles = JsonPath.read(json, "$.body.boards[*].title");

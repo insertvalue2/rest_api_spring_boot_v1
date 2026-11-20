@@ -86,7 +86,7 @@ class JwtAuthTest {
     }
 
     @Test
-    @DisplayName("S4 글 목록, 글 상세, /join, /login, /check-username, H2 콘솔은 토큰 없이 그대로 열린다")
+    @DisplayName("S4 글 목록, 글 상세, /join, /login, /check-username, H2 콘솔, 브라우저의 사전 요청(OPTIONS)은 토큰 없이 그대로 열린다")
     void s4() throws Exception {
         assertEquals(200, get("/api/boards", null).statusCode());
         assertEquals(200, get("/api/boards/1", null).statusCode());

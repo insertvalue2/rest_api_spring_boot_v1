@@ -98,7 +98,7 @@ class UserJoinTest {
     }
 
     @Test
-    @DisplayName("S4 입력이 틀리면 400과 이유 문구만 돌려준다 (빈 값, 아이디와 비밀번호 4~20자, 이메일 형식)")
+    @DisplayName("S4 입력이 틀리면 400과 이유 문구만 돌려준다 (빈 값, 아이디와 비밀번호 4~20자, 이메일 형식). 빈 문자열은 입력해주세요와 4~20자 문구 중 하나다")
     void s4() throws Exception {
         assertFail(join("love", "12", "love@nate.com"), 400, "비밀번호는 4~20자여야 합니다");
         assertFail(join("abc", "1234", "love@nate.com"), 400, "유저네임은 4~20자여야 합니다");

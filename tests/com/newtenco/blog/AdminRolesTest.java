@@ -70,9 +70,9 @@ class AdminRolesTest {
     }
 
     @Test
-    @DisplayName("S1 PUT /api/admin/users/{id}가 ADMIN 토큰과 역할 목록을 받아 그 회원의 역할을 바꾸고 id, username, roles를 돌려준다")
+    @DisplayName("S1 PUT /api/admin/users/{id}가 ADMIN 토큰과 역할 목록을 받아 그 회원의 역할을 바꾸고 id, username, roles를 돌려준다. 같은 역할이 여러 번 오면 하나로 친다")
     void s1() throws Exception {
-        HttpResponse<String> response = changeRoles(1, "[\"USER\",\"ADMIN\"]");
+        HttpResponse<String> response = changeRoles(1, "[\"USER\",\"ADMIN\",\"ADMIN\"]");
         assertEquals(200, response.statusCode());
         assertEquals(1, (Integer) JsonPath.read(response.body(), "$.body.id"));
         assertEquals("ssar", JsonPath.read(response.body(), "$.body.username"));

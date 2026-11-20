@@ -86,7 +86,7 @@ class UserLoginTest {
     }
 
     @Test
-    @DisplayName("S6 리액트 주소(localhost:5173, 3000)에서 온 요청을 허락하고, 브라우저 코드가 Authorization 응답 헤더를 읽을 수 있게 노출한다")
+    @DisplayName("S6 리액트 주소(localhost:5173, 3000)와 크롬 확장(Talend API Tester 같은)에서 온 요청을 허락하고, 브라우저 코드가 Authorization 응답 헤더를 읽을 수 있게 노출한다")
     void s6() throws Exception {
         HttpResponse<String> response = login("ssar", "1234", "http://localhost:5173");
         assertEquals(200, response.statusCode());
@@ -95,5 +95,8 @@ class UserLoginTest {
 
         HttpResponse<String> other = login("ssar", "1234", "http://localhost:3000");
         assertEquals("http://localhost:3000", other.headers().firstValue("Access-Control-Allow-Origin").orElse(null));
+
+        HttpResponse<String> extension = login("ssar", "1234", "chrome-extension://aejoelaoggembcahagimdiliamlcdmfm");
+        assertEquals("chrome-extension://aejoelaoggembcahagimdiliamlcdmfm", extension.headers().firstValue("Access-Control-Allow-Origin").orElse(null));
     }
 }
